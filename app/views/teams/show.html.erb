@@ -1,17 +1,18 @@
 <p>
-  <b>Division:</b>
-  <%=h @team.division_id %>
+  <b>Name:</b>
+  <%=h @team.name %>
 </p>
 
 <p>
   <b>Location:</b>
-  <%=h @team.location_id %>
+  <%=h @team.location.name %>
 </p>
 
 <p>
-  <b>Name:</b>
-  <%=h @team.name %>
+  <b>Division:</b>
+  <%=h @team.division.name %>
 </p>
+
 
 
 <%= link_to 'Edit', edit_team_path(@team) %> |

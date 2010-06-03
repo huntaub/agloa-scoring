@@ -82,4 +82,11 @@ class LocationsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def teams
+	@teams = Location.find(params[:location]).teams
+	render :update do |page|
+		page.replace_html 'team', :partial => 'teams'
+  	end
+  end
 end

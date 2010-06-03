@@ -9,19 +9,21 @@
   </p>
   <p>
     <%= f.label :division_id %><br />
-    <%= f.text_field :division_id %>
+    <%= f.collection_select(:division_id, Division.all, :id, :name) %>
   </p>
   <p>
     <%= f.label :location_id %><br />
-    <%= f.text_field :location_id %>
+    <%= f.collection_select(:location_id, Division.find(:first).locations, :id, :geo) %>
   </p>
   <p>
     <%= f.label :team_id %><br />
-    <%= f.text_field :team_id %>
+    <%= f.collection_select(:team_id, Team.find_all_by_location_id_and_division_id(Division.find(:first).locations[0].id, Division.find(:first).id), :id, :name) %>
   </p>
+  <%= observe_field 'player_location_id',
+    					:url       => {:controller => :location, :action => :teams},
+    					:with      => 'location' %>
   <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
-
 <%= link_to 'Back', players_path %>

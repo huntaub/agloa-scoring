@@ -2,18 +2,17 @@
 
 <% form_for(@team) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :division_id %><br />
-    <%= f.text_field :division_id %>
-  </p>
-  <p>
-    <%= f.label :location_id %><br />
-    <%= f.text_field :location_id %>
-  </p>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
+  </p>
+  <p>
+	<%= f.label :location_id %><br />
+    <%= f.collection_select(:location_id, Location.all, :id, :geo) %>
+  </p>
+  <p>
+    <%= f.label :division_id %><br />
+    <%= f.collection_select(:division_id, Division.all, :id, :name) %>
   </p>
   <p>
     <%= f.submit 'Update' %>

@@ -82,4 +82,11 @@ class DivisionsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def locations
+  	@locations = Division.find(params[:division]).locations
+  	render :update do |page|
+  		page.replace_html 'location', :partial => 'locations'
+  	end
+  end
 end

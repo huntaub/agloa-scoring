@@ -2,16 +2,16 @@
 
 <table>
   <tr>
-    <th>Division</th>
-    <th>Location</th>
     <th>Name</th>
+    <th>Location</th>
+    <th>Division</th>
   </tr>
 
 <% @teams.each do |team| %>
   <tr>
-    <td><%=h team.division_id %></td>
-    <td><%=h team.location_id %></td>
     <td><%=h team.name %></td>
+    <td><%=h team.location.geo %></td>
+    <td><%=h team.division.name %></td>
     <td><%= link_to 'Show', team %></td>
     <td><%= link_to 'Edit', edit_team_path(team) %></td>
     <td><%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %></td>
