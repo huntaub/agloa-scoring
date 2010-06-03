@@ -1,0 +1,150 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTournaments (20100603025638)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "tournaments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "year" varchar(255), "location" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100603025638')[0m
+Migrating to CreateGames (20100603025703)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "scoringModel" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100603025703')[0m
+Migrating to CreateDivisions (20100603025735)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "divisions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100603025735')[0m
+Migrating to CreateTeams (20100603030014)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "teams" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "division_id" integer, "location_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100603030014')[0m
+Migrating to CreateLocations (20100603030031)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "geo" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100603030031')[0m
+Migrating to CreatePlayers (20100603030143)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "division_id" integer, "location_id" integer, "team_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100603030143')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("divisions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("games")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("locations")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("players")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("teams")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tournaments")[0m
+
+
+Processing TournamentsController#index (for 127.0.0.1 at 2010-06-02 23:04:07) [GET]
+  [4;36;1mTournament Load (0.4ms)[0m   [0;1mSELECT * FROM "tournaments" [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 44ms (View: 40, DB: 0) | 200 OK [http://localhost/tournaments]
+
+
+Processing TournamentsController#new (for 127.0.0.1 at 2010-06-02 23:04:11) [GET]
+Rendering template within layouts/tournaments
+Rendering tournaments/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/tournaments/new]
+
+
+Processing TournamentsController#create (for 127.0.0.1 at 2010-06-02 23:04:52) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"LNtD02ytltNMoF2HsqgR+jxQNxdGJTGnB1DuIzNTm+0=", "tournament"=>{"location"=>"Cincinnati", "year"=>"2010"}}
+  [4;35;1mTournament Create (0.3ms)[0m   [0mINSERT INTO "tournaments" ("location", "created_at", "updated_at", "year") VALUES('Cincinnati', '2010-06-03 03:04:52', '2010-06-03 03:04:52', '2010')[0m
+Redirected to http://localhost:3000/tournaments/1
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/tournaments]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-02 23:04:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing TournamentsController#index (for 127.0.0.1 at 2010-06-02 23:04:53) [GET]
+  [4;35;1mTournament Load (0.5ms)[0m   [0mSELECT * FROM "tournaments" [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/tournaments]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-02 23:04:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing TournamentsController#index (for 127.0.0.1 at 2010-06-02 23:04:55) [GET]
+  [4;35;1mTournament Load (0.4ms)[0m   [0mSELECT * FROM "tournaments" [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/tournaments]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-06-02 23:05:15) [GET]
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" [0m
+Rendering template within layouts/locations
+Rendering locations/index
+Completed in 74ms (View: 9, DB: 0) | 200 OK [http://localhost/locations]
+
+
+Processing LocationsController#new (for 127.0.0.1 at 2010-06-02 23:05:16) [GET]
+Rendering template within layouts/locations
+Rendering locations/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/locations/new]
+
+
+Processing LocationsController#create (for 127.0.0.1 at 2010-06-02 23:05:22) [POST]
+  Parameters: {"location"=>{"name"=>"Forsyth County, Georgia", "geo"=>"FC"}, "commit"=>"Create", "authenticity_token"=>"LNtD02ytltNMoF2HsqgR+jxQNxdGJTGnB1DuIzNTm+0="}
+  [4;35;1mLocation Create (0.3ms)[0m   [0mINSERT INTO "locations" ("name", "created_at", "updated_at", "geo") VALUES('Forsyth County, Georgia', '2010-06-03 03:05:22', '2010-06-03 03:05:22', 'FC')[0m
+Redirected to http://localhost:3000/locations/1
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/locations]
+
+
+Processing LocationsController#show (for 127.0.0.1 at 2010-06-02 23:05:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+Rendering template within layouts/locations
+Rendering locations/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/locations/1]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2010-06-02 23:05:24) [GET]
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" [0m
+Rendering template within layouts/locations
+Rendering locations/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/locations]
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2010-06-02 23:05:35) [GET]
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" [0m
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/teams]
+
+
+Processing TeamsController#new (for 127.0.0.1 at 2010-06-02 23:05:50) [GET]
+Rendering template within layouts/teams
+Rendering teams/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/teams/new]
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2010-06-02 23:05:52) [GET]
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" [0m
+Rendering template within layouts/teams
+Rendering teams/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/teams]

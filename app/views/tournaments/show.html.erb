@@ -1,0 +1,13 @@
+<p>
+  <b>Year:</b>
+  <%=h @tournament.year %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @tournament.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_tournament_path(@tournament) %> |
+<%= link_to 'Back', tournaments_path %>

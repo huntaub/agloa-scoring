@@ -1,0 +1,20 @@
+<h1>Editing tournament</h1>
+
+<% form_for(@tournament) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @tournament %> |
+<%= link_to 'Back', tournaments_path %>

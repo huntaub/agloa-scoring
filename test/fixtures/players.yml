@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  division_id: 1
+  location_id: 1
+  team_id: 1
+
+two:
+  name: MyString
+  division_id: 1
+  location_id: 1
+  team_id: 1

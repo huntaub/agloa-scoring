@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  year: MyString
+  location: MyString
+
+two:
+  year: MyString
+  location: MyString
