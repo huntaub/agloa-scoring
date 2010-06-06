@@ -4,4 +4,5 @@ class Game < ActiveRecord::Base
   belongs_to :tournament
   accepts_nested_attributes_for :rounds
   has_many :seatings
+  attr_protected :bitwise_number
 end

@@ -3,7 +3,7 @@ class Team < ActiveRecord::Base
   belongs_to :division
   belongs_to :location
   belongs_to :tournament
-  
+  attr_protected :bitwise_games_played
   validates_size_of :players, :maximum => 5, :message => 'maximum of %d players'
   
   def teamScore

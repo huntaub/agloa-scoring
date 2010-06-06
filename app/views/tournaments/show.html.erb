@@ -27,7 +27,7 @@
    
    <p>
      <%= f.label :scoring_method %><br />
-     <%= select(@game, :scoringModel, ["Table", "Cube"]) %>
+     <%= select(:game, :scoringModel, ["Table", "Cube"]) %>
    </p>
    <p>
      <%= f.submit 'Create Game' %>

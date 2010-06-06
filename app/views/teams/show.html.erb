@@ -13,6 +13,13 @@
   <%=h @team.division.name %>
 </p>
 
+<h4> Games Played </h4>
+ <ul>
+ <% @team.tournament.games.each_with_index do |g, index| -%>
+   <%= if (@team.bitwise_games_played & g.bitwise_number) == g.bitwise_number then "<li>"+g.name+"</li>" end -%>
+ <% end -%>
+ </ul>
+
 <h1>Players</h1>
 
 <table>

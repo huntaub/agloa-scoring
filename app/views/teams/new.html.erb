@@ -16,6 +16,12 @@
     <%= f.label :division_id %><br />
     <%= f.collection_select(:division_id, Division.all, :id, :name) %>
   </p>
+  <h4> Games Played </h4>
+   <% @team.tournament.games.each_with_index do |g, index| %>
+   <input type="checkbox" id="games_played<%= index -%>" name="team[bit_wise][]" value="<%= g.bitwise_number %>" <%= if (@team.bitwise_games_played & g.bitwise_number) == g.bitwise_number then print "checked" end -%> />
+   <label for="games_played<%= index -%>"><%= g.name %></label>
+   <br/>
+   <% end %>
   <p>
     <%= f.submit 'Create' %>
   </p>

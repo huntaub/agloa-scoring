@@ -45,8 +45,13 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.xml
   def create
+    bitwise = params[:team][:bit_wise]
+    params[:team].delete(:bit_wise)
     @team = Team.new(params[:team])
-
+    @team.bitwise_games_played = 0
+    bitwise.each do |b|
+		@team.bitwise_games_played |= b.to_i
+	end
     respond_to do |format|
       if @team.save
         flash[:notice] = 'Team was successfully created.'
@@ -63,7 +68,13 @@ class TeamsController < ApplicationController
   # PUT /teams/1.xml
   def update
     @team = Team.find(params[:id])
-
+    bitwise = params[:team][:bit_wise]
+    params[:team].delete(:bit_wise)
+    @team.bitwise_games_played = 0
+    bitwise.each do |b|
+		@team.bitwise_games_played |= b.to_i
+	end
+	@team.save!
     respond_to do |format|
       if @team.update_attributes(params[:team])
         flash[:notice] = 'Team was successfully updated.'

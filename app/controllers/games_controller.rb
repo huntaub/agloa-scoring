@@ -122,9 +122,14 @@ class GamesController < ApplicationController
   # POST /games.xml
   def create
     @game = Game.new(params[:game])
-
     respond_to do |format|
       if @game.save
+        if @game.tournament.games.index(@game) == 0
+          @game.bitwise_number = 1
+        else
+          @game.bitwise_number = (@game.tournament.games[@game.tournament.games.index(@game)-1].bitwise_number) * 2
+        end
+        @game.save!
         flash[:notice] = 'Game was successfully created.'
         format.html { redirect_to(@game) }
         format.xml  { render :xml => @game, :status => :created, :location => @game }
@@ -156,10 +161,11 @@ class GamesController < ApplicationController
   # DELETE /games/1.xml
   def destroy
     @game = Game.find(params[:id])
+    tournament = @game.tournament
     @game.destroy
 
     respond_to do |format|
-      format.html { redirect_to(games_url) }
+      format.html { redirect_to(tournament) }
       format.xml  { head :ok }
     end
   end
@@ -185,6 +191,14 @@ class GamesController < ApplicationController
     redirect_to :action => :show, :id => params[:id]
   end
   
+  def team_plays_game?(team, game)
+    if (team.bitwise_games_played & game.bitwise_number) == game.bitwise_number
+      true
+    else
+      false
+    end
+  end
+  
   def seat
     @currentSeat = Seating.find_by_game_id_and_division_id_and_round_id(params[:id], params[:division], params[:round])
     if @currentSeat.nil? || !(params[:regenerate].nil?)
@@ -194,8 +208,51 @@ class GamesController < ApplicationController
       if @game.scoringModel == "Table"
         if @game.rounds.index(@round) == 0
        	  ####Random seating
-       	  
+       	  numberOfPlayers = 0
+       	  teamsPlaying = []
+       	  @division.teams.each do |t|
+       	    if team_plays_game?(t, @game)
+       	      numberOfPlayers += t.players.length
+       	      teamsPlaying << t
+       	    end
+       	  end
+       	  numberOfTables = (numberOfPlayers.to_f/3.to_f).ceil
+       	  puts numberOfTables
+       	  @tables = Array.new(numberOfTables)
+       	  @tables.map! { |x| [] }
+       	  teamsPlaying.each do |team|
+       	    team.players.each do |player|
+       	      playerSeated = false
+       	      countOfAttempts = 0
+       	      while !playerSeated
+	       	      tableToSeat = rand(numberOfTables)
+	       	      #puts 'tableToSeat: '+tableToSeat.to_s
+	       	      if @tables.at(tableToSeat).length < 3
+		       	      anythingWrong = false
+		       	      @tables.at(tableToSeat).each do |tablePlayer|
+		       	        if player.team == tablePlayer.team
+		       	          anythingWrong = true
+		       	        end
+		       	      end
+		       	      if !anythingWrong || countOfAttempts > 10
+		       	      	puts 'Seated '+player.name
+		       	        playerSeated = true
+		       	        @tables.at(tableToSeat).push player
+		       	      else
+		       	        countOfAttempts += 1
+		       	      end
+	       	      else
+	       	        countOfAttempts += 1
+	       	      end
+       	      end
+       	    end
+       	  end       	  
+       	  @tables.each_with_index do |p, i| 
+       	    puts 'Table ' + i.to_s 
+       	    p.each {|a| puts a.name}
+       	  end
         end
+        render 'table'
       end
     end
   end

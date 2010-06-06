@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100606045956) do
+ActiveRecord::Schema.define(:version => 20100606052531) do
 
   create_table "divisions", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20100606045956) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tournament_id"
+    t.integer  "bitwise_number"
+    t.string   "category"
   end
 
   create_table "locations", :force => true do |t|
@@ -71,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20100606045956) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tournament_id"
+    t.integer  "bitwise_games_played"
   end
 
   create_table "tournaments", :force => true do |t|

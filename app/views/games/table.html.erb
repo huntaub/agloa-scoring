@@ -1,0 +1,19 @@
+<h1> Seating for Round <%= @game.rounds.index(@round) + 1 %> of <%= @division.name %> <%= @game.name %> </h1>
+<% @tables.each_with_index do |table, index| %>
+  <h4> Table <%= index+1 %> </h4>
+  <table>
+  	<tr>
+  		<th>Name</th>
+  		<th>ID</th>
+  		<th>Team</th>
+  	</tr>
+  <% table.each do |p| %>
+  <tr>
+    <td><%= p.name %></td>
+    <td><%= p.id %></td>
+    <td><%= p.team.name %></td>
+  </tr>
+  <% end %>
+  </table>
+<% end %>
+<%= link_to 'Regenerate', {:regenerate => true, :division => @division.id, :round => @round.id} %>
