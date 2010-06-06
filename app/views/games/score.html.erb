@@ -1,0 +1,26 @@
+<h1>Scoring <%= @division.name %> <%= @game.name %></h1>
+<% Division.all.each do |d| %>
+	<%= link_to d.name, {:action => :score, :division => d.id, :round => @round.id} %>
+<% end %>
+<% form_for (@game) do |f| %>
+	<table>
+	  <tr>
+	    <th>Name</th>
+	    <th>ID</th>
+	    <th>Score</th>
+	  </tr>
+		<% @players.each do |p| %>
+			<% f.fields_for :rounds, @round do |r_form| %>
+				<% r_form.fields_for :scores, Score.find_by_round_id_and_player_id(@round.id, p.id)  do |score_form| %>
+				  <tr>
+				    <td><%=h score_form.object.player.name %></td>
+				    <td><%=h score_form.object.player.id %></td>
+				   	<td><%= score_form.text_field :score %></td>
+				  </tr>
+				<% end %>
+			<% end %>
+		<% end %>
+	</table>
+	<%= f.submit 'Save Scores' %>
+<% end %>
+<br />

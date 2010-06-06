@@ -2,7 +2,11 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.xml
   def index
-    @teams = Team.all
+  	if (params[:id].nil?)
+      @teams = Team.all
+    else
+      @teams = Tournament.find(params[:id]).teams
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +18,7 @@ class TeamsController < ApplicationController
   # GET /teams/1.xml
   def show
     @team = Team.find(params[:id])
+    @player = Player.new( :team => @team, :team_id => @team.id )
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +29,7 @@ class TeamsController < ApplicationController
   # GET /teams/new
   # GET /teams/new.xml
   def new
-    @team = Team.new
+    @team = Team.new( :tournament_id => params[:id] )
 
     respond_to do |format|
       format.html # new.html.erb

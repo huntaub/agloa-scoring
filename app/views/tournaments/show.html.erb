@@ -1,13 +1,44 @@
-<p>
-  <b>Year:</b>
-  <%=h @tournament.year %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%=h @tournament.location %>
-</p>
-
-
+<h1>
+  <b><%=h @tournament.location %> - <%=h @tournament.year %></b>
+</h1>
+<h2> Current Games </h2>
+<% @tournament.games.each do |game| %>
+    <td><%=h game.name %></td>
+    <td><%= link_to 'Show', game %></td>
+    <td><%= link_to 'Edit', edit_game_path(game) %></td>
+    <td><%= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete %></td>
+    <br/>
+<% end %>
+</table>
+<br/><br/>
+<a href="#" onclick="Effect.toggle('newGame', 'slide'); if (this.innerHTML == '<b>Hide New Game</b>') { this.innerHTML = '<b>New Game</b>'; } else { this.innerHTML = '<b>Hide New Game</b>'; } return false;"><b>New Game</b></a>
+<br/>
+ 
+<div id="newGame" style="display:none">
+<div>
+ <% form_for @game do|f| %>
+   <%= f.error_messages %>
+   <%= f.hidden_field :tournament_id %>
+   
+   <p>
+     <%= f.label :name %><br />
+     <%= f.text_field :name %>
+   </p>
+   
+   <p>
+     <%= f.label :scoring_method %><br />
+     <%= f.text_field :scoringModel %>
+   </p>
+   <p>
+     <%= f.submit 'Create Player' %>
+   </p>
+ <% end %>
+ </div>
+</div>
+<br/>
+<% if !@tournament.in_progress %>
+<%= link_to 'Register a Team', new_team_path + '/' + @tournament.id.to_s %> |
+<% end %>
+<%= link_to 'Teams', {:controller => :teams, :action => :index, :id => @tournament.id } %> |
 <%= link_to 'Edit', edit_tournament_path(@tournament) %> |
 <%= link_to 'Back', tournaments_path %>

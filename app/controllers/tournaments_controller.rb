@@ -14,6 +14,7 @@ class TournamentsController < ApplicationController
   # GET /tournaments/1.xml
   def show
     @tournament = Tournament.find(params[:id])
+    @game = Game.new( :tournament => @tournament, :tournament_id => @tournament.id )
 
     respond_to do |format|
       format.html # show.html.erb

@@ -4,10 +4,66 @@
 </p>
 
 <p>
-  <b>Scoringmodel:</b>
+  <b>Scoring Model:</b>
   <%=h @game.scoringModel %>
 </p>
+<% if (@scores.length > 0 && @superNil) %>
+	<h2> Top <%= @scores.length %> Players </h2>
+	<table>
+		<tr>
+			<th> Rank </th>
+			<th> Name </th>
+			<th> ID </th>
+			<th> Score </th>
+		</tr>
+	<% @scores.each do |s| %>
+	<tr>
+		<th> <%= s.rank %> </th>
+		<th> <%= s.name %> </th>
+		<th> <%= s.id %> </th>
+		<th> <%= s.totScore %> </th>
+	</tr>
+	<% end %>
+	</table>
+	
+	<h2> Top <%= @teams.length %> Teams </h2>
+	<table>
+		<tr>
+			<th> Rank </th>
+			<th> Name </th>
+			<th> Location </th>
+			<th> Score </th>
+		</tr>
+	<% @teams.each do |t| %>
+	<tr>
+		<th> <%= t.rank %> </th>
+		<th> <%= t.name %> </th>
+		<th> <%= t.location.geo %> </th>
+		<th> <%= t.teamScore %> </th>
+	</tr>
+	<% end %>
+	</table>
+<% end %>
 
+<h2> Current Rounds </h2>
+<table>
+	<tr>
+		<th> Round Number </th>
+	</tr>
+<% @rounds.each_with_index do |round, r| %>
+<tr>
+	<th> <%= (r+1) %> </th>
+	<th> <%= link_to "Score", {:action => :score, :round => round.id} %> </th>
+	<th> <%= link_to "Seating Chart", {:action => :score, :round => round.id} %> </th>
+</tr>
+<% end %>
+</table>
+
+<br/>
+ 
+<%= link_to "New Round", :id => @game.id, :action => :new_round %>
+<br/>
+<br/>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<%= link_to 'Back', @game.tournament %>

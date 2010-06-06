@@ -8,25 +8,6 @@
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :division %><br />
-    <%= f.collection_select(:division_id, Division.all, :id, :name) %>
-  </p>
-  <p id="location">
-    <%= f.label :location %><br />
-    <%= f.collection_select(:location_id, Division.find(:first).locations, :id, :geo) %>
-  </p>
-  <p id="team">
-    <%= f.label :team_id %><br />
-    <%= f.collection_select(:team_id, Team.find_all_by_location_id_and_division_id(Division.find(:first).locations[0].id, Division.find(:first).id), :id, :name) %>
-  </p>
-  <%= observe_field "player_location_id",
-    					:url       => {:controller => :locations, :action => :teams},
-    					:with      => 'location' %>
-   
-  <%= observe_field "player_division_id",
-  	 					:url       => {:controller => :divisions, :action => :locations},
-     					:with      => 'division' %>
-  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>

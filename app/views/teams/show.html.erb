@@ -13,7 +13,45 @@
   <%=h @team.division.name %>
 </p>
 
+<h1>Players</h1>
 
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @team.players.each do |player| %>
+  <tr>
+    <td><%=h player.name %></td>
+    <td><%= link_to 'Show', player %></td>
+    <td><%= link_to 'Edit', edit_player_path(player) %></td>
+    <td><%= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br/>
+<a href="#" onclick="Effect.toggle('newPlayer', 'slide'); if (this.innerHTML == '<b>Hide New Player</b>') { this.innerHTML = '<b>New Player</b>'; } else { this.innerHTML = '<b>Hide New Player</b>'; } return false;"><b>New Player</b></a>
+<br/>
+ 
+<div id="newPlayer" style="display:none">
+<div>
+ <% form_for @player do|f| %>
+   <%= f.error_messages %>
+   <%= f.hidden_field :team_id %>
+   <input type="hidden" id="player_division_id" name="player[division_id]" value="<%= @team.division.id %>" />
+   <input type="hidden" id="player_location_id" name="player[location_id]" value="<%= @team.location.id %>" />
+   
+   <p>
+     <%= f.label :name %><br />
+     <%= f.text_field :name %>
+   </p>
+   <p>
+     <%= f.submit 'Create Player' %>
+   </p>
+ <% end %>
+ </div>
+</div>
+<br/>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+<%= link_to 'Back', @team.tournament %>

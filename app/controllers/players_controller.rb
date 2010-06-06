@@ -45,7 +45,7 @@ class PlayersController < ApplicationController
     respond_to do |format|
       if @player.save
         flash[:notice] = 'Player was successfully created.'
-        format.html { redirect_to(@player) }
+        format.html { redirect_to(@player.team) }
         format.xml  { render :xml => @player, :status => :created, :location => @player }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class PlayersController < ApplicationController
     respond_to do |format|
       if @player.update_attributes(params[:player])
         flash[:notice] = 'Player was successfully updated.'
-        format.html { redirect_to(@player) }
+        format.html { redirect_to(@player.team) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,7 +78,7 @@ class PlayersController < ApplicationController
     @player.destroy
 
     respond_to do |format|
-      format.html { redirect_to(players_url) }
+      format.html { redirect_to(@player.team) }
       format.xml  { head :ok }
     end
   end

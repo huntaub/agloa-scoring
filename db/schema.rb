@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100603030143) do
+ActiveRecord::Schema.define(:version => 20100605211550) do
 
   create_table "divisions", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20100603030143) do
     t.string   "scoringModel"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tournament_id"
   end
 
   create_table "locations", :force => true do |t|
@@ -40,12 +41,27 @@ ActiveRecord::Schema.define(:version => 20100603030143) do
     t.datetime "updated_at"
   end
 
+  create_table "rounds", :force => true do |t|
+    t.integer  "game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scores", :force => true do |t|
+    t.integer  "score"
+    t.integer  "player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "round_id"
+  end
+
   create_table "teams", :force => true do |t|
     t.integer  "division_id"
     t.integer  "location_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tournament_id"
   end
 
   create_table "tournaments", :force => true do |t|
@@ -53,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20100603030143) do
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "in_progress"
   end
 
 end
