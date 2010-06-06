@@ -14870,3 +14870,10 @@ Processing TournamentsController#index (for 127.0.0.1 at 2010-06-06 00:18:44) [G
 Rendering template within layouts/tournaments
 Rendering tournaments/index
 Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/tournaments]
+
+
+Processing TournamentsController#index (for 127.0.0.1 at 2010-06-06 00:19:43) [GET]
+  [4;36;1mTournament Load (0.5ms)[0m   [0;1mSELECT * FROM "tournaments" [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/]
