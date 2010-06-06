@@ -251,7 +251,16 @@ class GamesController < ApplicationController
        	    puts 'Table ' + i.to_s 
        	    p.each {|a| puts a.name}
        	  end
+       	  @currentSeat = Seating.create(:game_id => @game.id, :html => @tables, :round_id => @round.id, :division_id => @division.id)
         end
+        render 'table'
+      end
+    else
+      @game = Game.find(params[:id])
+      @round = Round.find(params[:round])
+      @division = Division.find(params[:division])
+      if @game.scoringModel == "Table"
+        @tables = @currentSeat.html
         render 'table'
       end
     end

@@ -39,3 +39,20 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+YAML.add_domain_type("ActiveRecord,2007", "") do |type, val|
+  klass = type.split(':').last.constantize
+  YAML.object_maker(klass, val)
+end
+
+class ActiveRecord::Base
+  def to_yaml_type
+    "!ActiveRecord,2007/#{self.class}"
+  end
+end
+
+class ActiveRecord::Base
+  def to_yaml_properties
+    ['@attributes']
+  end
+end

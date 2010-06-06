@@ -19733,3 +19733,2735 @@ Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 14:41:59) [GET]
 Rendering template within layouts/games
 Rendering games/table
 Completed in 85ms (View: 4, DB: 4) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:12:18) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."game_id" = '13' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;35;1mGame Load (0.6ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.5ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mSeating Create (0.5ms)[0m   [0;1mINSERT INTO "seatings" ("html", "round_id", "created_at", "updated_at", "division_id", "game_id") VALUES('--- 
+- - !ruby/object:Player 
+ attributes: 
+ name: Michael Liu
+ created_at: 2010-06-06 17:54:49
+ updated_at: 2010-06-06 17:54:49
+ id: "26"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Jea Du Kim
+ created_at: 2010-06-06 17:57:45
+ updated_at: 2010-06-06 17:57:45
+ id: "31"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Ben Bartolome
+ created_at: 2010-06-06 18:38:32
+ updated_at: 2010-06-06 18:38:32
+ id: "35"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Julie Chow
+ created_at: 2010-06-06 17:54:42
+ updated_at: 2010-06-06 17:54:42
+ id: "25"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Lucy Yang
+ created_at: 2010-06-06 17:55:28
+ updated_at: 2010-06-06 17:55:28
+ id: "29"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Senthil Natarajan
+ created_at: 2010-06-06 18:39:28
+ updated_at: 2010-06-06 18:39:28
+ id: "39"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Hunter Leath
+ created_at: 2010-06-06 17:54:18
+ updated_at: 2010-06-06 17:54:18
+ id: "23"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Kate Evans
+ created_at: 2010-06-06 17:57:33
+ updated_at: 2010-06-06 17:57:37
+ id: "30"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Ridwan Syed
+ created_at: 2010-06-06 18:38:18
+ updated_at: 2010-06-06 18:38:18
+ id: "33"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Brett Jordan
+ created_at: 2010-06-06 17:54:28
+ updated_at: 2010-06-06 17:54:28
+ id: "24"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Dustin Wright
+ created_at: 2010-06-06 18:38:40
+ updated_at: 2010-06-06 18:38:40
+ id: "36"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Jonathan Lin
+ created_at: 2010-06-06 18:39:45
+ updated_at: 2010-06-06 18:39:45
+ id: "41"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Stephen Schwartz
+ created_at: 2010-06-06 17:54:56
+ updated_at: 2010-06-06 17:54:56
+ id: "27"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Brent Lippert
+ created_at: 2010-06-06 17:57:58
+ updated_at: 2010-06-06 17:57:58
+ id: "32"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Sam Jung
+ created_at: 2010-06-06 18:38:49
+ updated_at: 2010-06-06 18:38:49
+ id: "37"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Tyler Stern
+ created_at: 2010-06-06 17:55:23
+ updated_at: 2010-06-06 17:55:23
+ id: "28"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: John Campos
+ created_at: 2010-06-06 18:38:25
+ updated_at: 2010-06-06 18:38:25
+ id: "34"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Sahil Patel
+ created_at: 2010-06-06 18:39:19
+ updated_at: 2010-06-06 18:39:19
+ id: "38"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Shoham Das
+ created_at: 2010-06-06 18:39:36
+ updated_at: 2010-06-06 18:39:36
+ id: "40"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Nowrin Chowdhury
+ created_at: 2010-06-06 18:39:52
+ updated_at: 2010-06-06 18:39:52
+ id: "42"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+', NULL, '2010-06-06 22:12:18', '2010-06-06 22:12:18', NULL, 13)[0m
+Rendering template within layouts/games
+Rendering games/table
+Completed in 255ms (View: 16, DB: 4) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:12:20) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."game_id" = '13' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.1ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mTeam Load (0.4ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mSeating Create (0.5ms)[0m   [0mINSERT INTO "seatings" ("html", "round_id", "created_at", "updated_at", "division_id", "game_id") VALUES('--- 
+- - !ruby/object:Player 
+ attributes: 
+ name: Brett Jordan
+ created_at: 2010-06-06 17:54:28
+ updated_at: 2010-06-06 17:54:28
+ id: "24"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Lucy Yang
+ created_at: 2010-06-06 17:55:28
+ updated_at: 2010-06-06 17:55:28
+ id: "29"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Shoham Das
+ created_at: 2010-06-06 18:39:36
+ updated_at: 2010-06-06 18:39:36
+ id: "40"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Ben Bartolome
+ created_at: 2010-06-06 18:38:32
+ updated_at: 2010-06-06 18:38:32
+ id: "35"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Senthil Natarajan
+ created_at: 2010-06-06 18:39:28
+ updated_at: 2010-06-06 18:39:28
+ id: "39"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Jonathan Lin
+ created_at: 2010-06-06 18:39:45
+ updated_at: 2010-06-06 18:39:45
+ id: "41"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Stephen Schwartz
+ created_at: 2010-06-06 17:54:56
+ updated_at: 2010-06-06 17:54:56
+ id: "27"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Kate Evans
+ created_at: 2010-06-06 17:57:33
+ updated_at: 2010-06-06 17:57:37
+ id: "30"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Sam Jung
+ created_at: 2010-06-06 18:38:49
+ updated_at: 2010-06-06 18:38:49
+ id: "37"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Hunter Leath
+ created_at: 2010-06-06 17:54:18
+ updated_at: 2010-06-06 17:54:18
+ id: "23"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Brent Lippert
+ created_at: 2010-06-06 17:57:58
+ updated_at: 2010-06-06 17:57:58
+ id: "32"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: John Campos
+ created_at: 2010-06-06 18:38:25
+ updated_at: 2010-06-06 18:38:25
+ id: "34"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Michael Liu
+ created_at: 2010-06-06 17:54:49
+ updated_at: 2010-06-06 17:54:49
+ id: "26"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Tyler Stern
+ created_at: 2010-06-06 17:55:23
+ updated_at: 2010-06-06 17:55:23
+ id: "28"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Ridwan Syed
+ created_at: 2010-06-06 18:38:18
+ updated_at: 2010-06-06 18:38:18
+ id: "33"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Julie Chow
+ created_at: 2010-06-06 17:54:42
+ updated_at: 2010-06-06 17:54:42
+ id: "25"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Jea Du Kim
+ created_at: 2010-06-06 17:57:45
+ updated_at: 2010-06-06 17:57:45
+ id: "31"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Dustin Wright
+ created_at: 2010-06-06 18:38:40
+ updated_at: 2010-06-06 18:38:40
+ id: "36"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Sahil Patel
+ created_at: 2010-06-06 18:39:19
+ updated_at: 2010-06-06 18:39:19
+ id: "38"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Nowrin Chowdhury
+ created_at: 2010-06-06 18:39:52
+ updated_at: 2010-06-06 18:39:52
+ id: "42"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+', NULL, '2010-06-06 22:12:20', '2010-06-06 22:12:20', NULL, 13)[0m
+Rendering template within layouts/games
+Rendering games/table
+Completed in 249ms (View: 4, DB: 4) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:12:21) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."game_id" = '13' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mSeating Create (0.5ms)[0m   [0;1mINSERT INTO "seatings" ("html", "round_id", "created_at", "updated_at", "division_id", "game_id") VALUES('--- 
+- - !ruby/object:Player 
+ attributes: 
+ name: Michael Liu
+ created_at: 2010-06-06 17:54:49
+ updated_at: 2010-06-06 17:54:49
+ id: "26"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Brent Lippert
+ created_at: 2010-06-06 17:57:58
+ updated_at: 2010-06-06 17:57:58
+ id: "32"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Shoham Das
+ created_at: 2010-06-06 18:39:36
+ updated_at: 2010-06-06 18:39:36
+ id: "40"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Ben Bartolome
+ created_at: 2010-06-06 18:38:32
+ updated_at: 2010-06-06 18:38:32
+ id: "35"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Sahil Patel
+ created_at: 2010-06-06 18:39:19
+ updated_at: 2010-06-06 18:39:19
+ id: "38"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Nowrin Chowdhury
+ created_at: 2010-06-06 18:39:52
+ updated_at: 2010-06-06 18:39:52
+ id: "42"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Brett Jordan
+ created_at: 2010-06-06 17:54:28
+ updated_at: 2010-06-06 17:54:28
+ id: "24"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Jea Du Kim
+ created_at: 2010-06-06 17:57:45
+ updated_at: 2010-06-06 17:57:45
+ id: "31"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Senthil Natarajan
+ created_at: 2010-06-06 18:39:28
+ updated_at: 2010-06-06 18:39:28
+ id: "39"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Stephen Schwartz
+ created_at: 2010-06-06 17:54:56
+ updated_at: 2010-06-06 17:54:56
+ id: "27"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Tyler Stern
+ created_at: 2010-06-06 17:55:23
+ updated_at: 2010-06-06 17:55:23
+ id: "28"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: John Campos
+ created_at: 2010-06-06 18:38:25
+ updated_at: 2010-06-06 18:38:25
+ id: "34"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Ridwan Syed
+ created_at: 2010-06-06 18:38:18
+ updated_at: 2010-06-06 18:38:18
+ id: "33"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Jonathan Lin
+ created_at: 2010-06-06 18:39:45
+ updated_at: 2010-06-06 18:39:45
+ id: "41"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Hunter Leath
+ created_at: 2010-06-06 17:54:18
+ updated_at: 2010-06-06 17:54:18
+ id: "23"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Kate Evans
+ created_at: 2010-06-06 17:57:33
+ updated_at: 2010-06-06 17:57:37
+ id: "30"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Sam Jung
+ created_at: 2010-06-06 18:38:49
+ updated_at: 2010-06-06 18:38:49
+ id: "37"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Julie Chow
+ created_at: 2010-06-06 17:54:42
+ updated_at: 2010-06-06 17:54:42
+ id: "25"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Lucy Yang
+ created_at: 2010-06-06 17:55:28
+ updated_at: 2010-06-06 17:55:28
+ id: "29"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Dustin Wright
+ created_at: 2010-06-06 18:38:40
+ updated_at: 2010-06-06 18:38:40
+ id: "36"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+', NULL, '2010-06-06 22:12:21', '2010-06-06 22:12:21', NULL, 13)[0m
+Rendering template within layouts/games
+Rendering games/table
+Completed in 256ms (View: 4, DB: 4) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+  [4;36;1mSeating Load (0.7ms)[0m   [0;1mSELECT * FROM "seatings" [0m
+  [4;35;1mSeating Load (0.9ms)[0m   [0mSELECT * FROM "seatings" [0m
+  [4;36;1mSeating Load (1.0ms)[0m   [0;1mSELECT * FROM "seatings" [0m
+  [4;35;1mSeating Delete all (2.5ms)[0m   [0mDELETE FROM "seatings" WHERE ("id" IN (1)) [0m
+  [4;36;1mSeating Delete all (1.4ms)[0m   [0;1mDELETE FROM "seatings" WHERE ("id" IN (2)) [0m
+  [4;35;1mSeating Delete all (0.9ms)[0m   [0mDELETE FROM "seatings" WHERE ("id" IN (3)) [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSeating Load (0.3ms)[0m   [0mSELECT * FROM "seatings" [0m
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:13:42) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."game_id" = '13' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mTeam Load (0.4ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mSeating Create (0.5ms)[0m   [0mINSERT INTO "seatings" ("html", "round_id", "created_at", "updated_at", "division_id", "game_id") VALUES('--- 
+- - !ruby/object:Player 
+ attributes: 
+ name: Lucy Yang
+ created_at: 2010-06-06 17:55:28
+ updated_at: 2010-06-06 17:55:28
+ id: "29"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Senthil Natarajan
+ created_at: 2010-06-06 18:39:28
+ updated_at: 2010-06-06 18:39:28
+ id: "39"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Nowrin Chowdhury
+ created_at: 2010-06-06 18:39:52
+ updated_at: 2010-06-06 18:39:52
+ id: "42"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Stephen Schwartz
+ created_at: 2010-06-06 17:54:56
+ updated_at: 2010-06-06 17:54:56
+ id: "27"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Brent Lippert
+ created_at: 2010-06-06 17:57:58
+ updated_at: 2010-06-06 17:57:58
+ id: "32"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: John Campos
+ created_at: 2010-06-06 18:38:25
+ updated_at: 2010-06-06 18:38:25
+ id: "34"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Dustin Wright
+ created_at: 2010-06-06 18:38:40
+ updated_at: 2010-06-06 18:38:40
+ id: "36"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Sahil Patel
+ created_at: 2010-06-06 18:39:19
+ updated_at: 2010-06-06 18:39:19
+ id: "38"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Julie Chow
+ created_at: 2010-06-06 17:54:42
+ updated_at: 2010-06-06 17:54:42
+ id: "25"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Kate Evans
+ created_at: 2010-06-06 17:57:33
+ updated_at: 2010-06-06 17:57:37
+ id: "30"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Ridwan Syed
+ created_at: 2010-06-06 18:38:18
+ updated_at: 2010-06-06 18:38:18
+ id: "33"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Brett Jordan
+ created_at: 2010-06-06 17:54:28
+ updated_at: 2010-06-06 17:54:28
+ id: "24"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Jea Du Kim
+ created_at: 2010-06-06 17:57:45
+ updated_at: 2010-06-06 17:57:45
+ id: "31"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Ben Bartolome
+ created_at: 2010-06-06 18:38:32
+ updated_at: 2010-06-06 18:38:32
+ id: "35"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Hunter Leath
+ created_at: 2010-06-06 17:54:18
+ updated_at: 2010-06-06 17:54:18
+ id: "23"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Sam Jung
+ created_at: 2010-06-06 18:38:49
+ updated_at: 2010-06-06 18:38:49
+ id: "37"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-06 18:41:55
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Shoham Das
+ created_at: 2010-06-06 18:39:36
+ updated_at: 2010-06-06 18:39:36
+ id: "40"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+- - !ruby/object:Player 
+ attributes: 
+ name: Michael Liu
+ created_at: 2010-06-06 17:54:49
+ updated_at: 2010-06-06 17:54:49
+ id: "26"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-06 17:55:06
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Tyler Stern
+ created_at: 2010-06-06 17:55:23
+ updated_at: 2010-06-06 17:55:23
+ id: "28"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-06 17:55:19
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+ - !ruby/object:Player 
+ attributes: 
+ name: Jonathan Lin
+ created_at: 2010-06-06 18:39:45
+ updated_at: 2010-06-06 18:39:45
+ id: "41"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ attributes_cache: {}
+
+ team: !ruby/object:Team 
+ attributes: 
+ bitwise_games_played: "1"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-06 18:39:10
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ attributes_cache: {}
+
+', 5, '2010-06-06 22:13:42', '2010-06-06 22:13:42', 1, 13)[0m
+Rendering template within layouts/games
+Rendering games/table
+Completed in 241ms (View: 4, DB: 4) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:13:43) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.3ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."game_id" = '13' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/games/seat.html.erb:
+1: <%= link_to 'Regenerate', {:regenerate => true, :division => @division.id, :round => @round.id} %>
+
+    app/views/games/seat.html.erb:1
+
+Rendered rescues/_trace (88.9ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:14:47) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."game_id" = '13' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+
+ActionView::TemplateError (undefined method `name' for #<YAML::Object:0x104201908>) on line #12 of app/views/games/table.html.erb:
+9:   	</tr>
+10:   <% table.each do |p| %>
+11:   <tr>
+12:     <td><%= p.name %></td>
+13:     <td><%= p.id %></td>
+14:     <td><%= p.team.name %></td>
+15:   </tr>
+
+    app/views/games/table.html.erb:12
+    app/views/games/table.html.erb:10:in `each'
+    app/views/games/table.html.erb:10
+    app/views/games/table.html.erb:2:in `each'
+    app/views/games/table.html.erb:2:in `each_with_index'
+    app/views/games/table.html.erb:2
+    app/controllers/games_controller.rb:264:in `seat'
+
+Rendered rescues/_trace (83.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:16:27) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."game_id" = '13' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+
+ActionView::TemplateError (undefined method `attributes' for #<YAML::Object:0x1041d1898>) on line #12 of app/views/games/table.html.erb:
+9:   	</tr>
+10:   <% table.each do |p| %>
+11:   <tr>
+12:     <td><%= p.attributes[:name] %></td>
+13:     <td><%= p.id %></td>
+14:     <td><%= p.team.name %></td>
+15:   </tr>
+
+    app/views/games/table.html.erb:12
+    app/views/games/table.html.erb:10:in `each'
+    app/views/games/table.html.erb:10
+    app/views/games/table.html.erb:2:in `each'
+    app/views/games/table.html.erb:2:in `each_with_index'
+    app/views/games/table.html.erb:2
+    app/controllers/games_controller.rb:264:in `seat'
+
+Rendered rescues/_trace (90.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:16:35) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."game_id" = '13' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;35;1mRound Load (0.3ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+
+ActionView::TemplateError (undefined method `[]' for #<YAML::Object:0x104183800>) on line #12 of app/views/games/table.html.erb:
+9:   	</tr>
+10:   <% table.each do |p| %>
+11:   <tr>
+12:     <td><%= p[:name] %></td>
+13:     <td><%= p.id %></td>
+14:     <td><%= p.team.name %></td>
+15:   </tr>
+
+    app/views/games/table.html.erb:12
+    app/views/games/table.html.erb:10:in `each'
+    app/views/games/table.html.erb:10
+    app/views/games/table.html.erb:2:in `each'
+    app/views/games/table.html.erb:2:in `each_with_index'
+    app/views/games/table.html.erb:2
+    app/controllers/games_controller.rb:264:in `seat'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TournamentsController#index (for 127.0.0.1 at 2010-06-06 18:16:52) [GET]
+  [4;36;1mTournament Load (0.5ms)[0m   [0;1mSELECT * FROM "tournaments" [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 45ms (View: 39, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:22:34) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.3ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+
+ActionView::TemplateError (undefined method `name' for #<YAML::Object:0x104bd17f8>) on line #12 of app/views/games/table.html.erb:
+9:   	</tr>
+10:   <% table.each do |p| %>
+11:   <tr>
+12:     <td><%= p.name %></td>
+13:     <td><%= p.id %></td>
+14:     <td><%= p.team.name %></td>
+15:   </tr>
+
+    app/views/games/table.html.erb:12
+    app/views/games/table.html.erb:10:in `each'
+    app/views/games/table.html.erb:10
+    app/views/games/table.html.erb:2:in `each'
+    app/views/games/table.html.erb:2:in `each_with_index'
+    app/views/games/table.html.erb:2
+    app/controllers/games_controller.rb:264:in `seat'
+
+Rendered rescues/_trace (79.2ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:22:35) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+
+ActionView::TemplateError (undefined method `name' for #<YAML::Object:0x104a8ef08>) on line #12 of app/views/games/table.html.erb:
+9:   	</tr>
+10:   <% table.each do |p| %>
+11:   <tr>
+12:     <td><%= p.name %></td>
+13:     <td><%= p.id %></td>
+14:     <td><%= p.team.name %></td>
+15:   </tr>
+
+    app/views/games/table.html.erb:12
+    app/views/games/table.html.erb:10:in `each'
+    app/views/games/table.html.erb:10
+    app/views/games/table.html.erb:2:in `each'
+    app/views/games/table.html.erb:2:in `each_with_index'
+    app/views/games/table.html.erb:2
+    app/controllers/games_controller.rb:264:in `seat'
+
+Rendered rescues/_trace (84.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:22:36) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+
+ActionView::TemplateError (undefined method `name' for #<YAML::Object:0x104a587c8>) on line #12 of app/views/games/table.html.erb:
+9:   	</tr>
+10:   <% table.each do |p| %>
+11:   <tr>
+12:     <td><%= p.name %></td>
+13:     <td><%= p.id %></td>
+14:     <td><%= p.team.name %></td>
+15:   </tr>
+
+    app/views/games/table.html.erb:12
+    app/views/games/table.html.erb:10:in `each'
+    app/views/games/table.html.erb:10
+    app/views/games/table.html.erb:2:in `each'
+    app/views/games/table.html.erb:2:in `each_with_index'
+    app/views/games/table.html.erb:2
+    app/controllers/games_controller.rb:264:in `seat'
+
+Rendered rescues/_trace (85.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:22:36) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+
+ActionView::TemplateError (undefined method `name' for #<YAML::Object:0x104a2f878>) on line #12 of app/views/games/table.html.erb:
+9:   	</tr>
+10:   <% table.each do |p| %>
+11:   <tr>
+12:     <td><%= p.name %></td>
+13:     <td><%= p.id %></td>
+14:     <td><%= p.team.name %></td>
+15:   </tr>
+
+    app/views/games/table.html.erb:12
+    app/views/games/table.html.erb:10:in `each'
+    app/views/games/table.html.erb:10
+    app/views/games/table.html.erb:2:in `each'
+    app/views/games/table.html.erb:2:in `each_with_index'
+    app/views/games/table.html.erb:2
+    app/controllers/games_controller.rb:264:in `seat'
+
+Rendered rescues/_trace (94.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:22:37) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.3ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+
+ActionView::TemplateError (undefined method `name' for #<YAML::Object:0x104a17c78>) on line #12 of app/views/games/table.html.erb:
+9:   	</tr>
+10:   <% table.each do |p| %>
+11:   <tr>
+12:     <td><%= p.name %></td>
+13:     <td><%= p.id %></td>
+14:     <td><%= p.team.name %></td>
+15:   </tr>
+
+    app/views/games/table.html.erb:12
+    app/views/games/table.html.erb:10:in `each'
+    app/views/games/table.html.erb:10
+    app/views/games/table.html.erb:2:in `each'
+    app/views/games/table.html.erb:2:in `each_with_index'
+    app/views/games/table.html.erb:2
+    app/controllers/games_controller.rb:264:in `seat'
+
+Rendered rescues/_trace (92.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:22:37) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.3ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;35;1mRound Load (0.5ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+
+ActionView::TemplateError (undefined method `name' for #<YAML::Object:0x1049fe098>) on line #12 of app/views/games/table.html.erb:
+9:   	</tr>
+10:   <% table.each do |p| %>
+11:   <tr>
+12:     <td><%= p.name %></td>
+13:     <td><%= p.id %></td>
+14:     <td><%= p.team.name %></td>
+15:   </tr>
+
+    app/views/games/table.html.erb:12
+    app/views/games/table.html.erb:10:in `each'
+    app/views/games/table.html.erb:10
+    app/views/games/table.html.erb:2:in `each'
+    app/views/games/table.html.erb:2:in `each_with_index'
+    app/views/games/table.html.erb:2
+    app/controllers/games_controller.rb:264:in `seat'
+
+Rendered rescues/_trace (85.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 18:22:38) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+
+ActionView::TemplateError (undefined method `name' for #<YAML::Object:0x1049e3590>) on line #12 of app/views/games/table.html.erb:
+9:   	</tr>
+10:   <% table.each do |p| %>
+11:   <tr>
+12:     <td><%= p.name %></td>
+13:     <td><%= p.id %></td>
+14:     <td><%= p.team.name %></td>
+15:   </tr>
+
+    app/views/games/table.html.erb:12
+    app/views/games/table.html.erb:10:in `each'
+    app/views/games/table.html.erb:10
+    app/views/games/table.html.erb:2:in `each'
+    app/views/games/table.html.erb:2:in `each_with_index'
+    app/views/games/table.html.erb:2
+    app/controllers/games_controller.rb:264:in `seat'
+
+Rendered rescues/_trace (95.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSeating Load (0.9ms)[0m   [0;1mSELECT * FROM "seatings" [0m
+  [4;35;1mSeating Delete all (56.7ms)[0m   [0mDELETE FROM "seatings" WHERE ("id" IN (4)) [0m
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 19:54:35) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mTeam Load (0.4ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.4ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mSeating Create (0.5ms)[0m   [0mINSERT INTO "seatings" ("html", "round_id", "created_at", "updated_at", "division_id", "game_id") VALUES('--- 
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Stephen Schwartz
+ created_at: 2010-06-06 17:54:56
+ updated_at: 2010-06-06 17:54:56
+ id: "27"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Dustin Wright
+ created_at: 2010-06-06 18:38:40
+ updated_at: 2010-06-06 18:38:40
+ id: "36"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Sahil Patel
+ created_at: 2010-06-06 18:39:19
+ updated_at: 2010-06-06 18:39:19
+ id: "38"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Hunter Leath
+ created_at: 2010-06-06 17:54:18
+ updated_at: 2010-06-06 17:54:18
+ id: "23"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Jea Du Kim
+ created_at: 2010-06-06 17:57:45
+ updated_at: 2010-06-06 17:57:45
+ id: "31"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Senthil Natarajan
+ created_at: 2010-06-06 18:39:28
+ updated_at: 2010-06-06 18:39:28
+ id: "39"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Michael Liu
+ created_at: 2010-06-06 17:54:49
+ updated_at: 2010-06-06 17:54:49
+ id: "26"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Ridwan Syed
+ created_at: 2010-06-06 18:38:18
+ updated_at: 2010-06-06 18:38:18
+ id: "33"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Shoham Das
+ created_at: 2010-06-06 18:39:36
+ updated_at: 2010-06-06 18:39:36
+ id: "40"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Brett Jordan
+ created_at: 2010-06-06 17:54:28
+ updated_at: 2010-06-06 17:54:28
+ id: "24"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Kate Evans
+ created_at: 2010-06-06 17:57:33
+ updated_at: 2010-06-06 17:57:37
+ id: "30"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Ben Bartolome
+ created_at: 2010-06-06 18:38:32
+ updated_at: 2010-06-06 18:38:32
+ id: "35"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Tyler Stern
+ created_at: 2010-06-06 17:55:23
+ updated_at: 2010-06-06 17:55:23
+ id: "28"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Sam Jung
+ created_at: 2010-06-06 18:38:49
+ updated_at: 2010-06-06 18:38:49
+ id: "37"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Nowrin Chowdhury
+ created_at: 2010-06-06 18:39:52
+ updated_at: 2010-06-06 18:39:52
+ id: "42"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Julie Chow
+ created_at: 2010-06-06 17:54:42
+ updated_at: 2010-06-06 17:54:42
+ id: "25"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Lucy Yang
+ created_at: 2010-06-06 17:55:28
+ updated_at: 2010-06-06 17:55:28
+ id: "29"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Jonathan Lin
+ created_at: 2010-06-06 18:39:45
+ updated_at: 2010-06-06 18:39:45
+ id: "41"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Brent Lippert
+ created_at: 2010-06-06 17:57:58
+ updated_at: 2010-06-06 17:57:58
+ id: "32"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: John Campos
+ created_at: 2010-06-06 18:38:25
+ updated_at: 2010-06-06 18:38:25
+ id: "34"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+', 5, '2010-06-06 23:54:35', '2010-06-06 23:54:35', 1, 13)[0m
+Rendering template within layouts/games
+Rendering games/table
+Completed in 232ms (View: 51, DB: 4) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+  [4;36;1mSeating Load (0.7ms)[0m   [0;1mSELECT * FROM "seatings" [0m
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 19:54:54) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+Completed in 37ms (View: 15, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 19:54:55) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;35;1mRound Load (0.3ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+Completed in 91ms (View: 16, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 19:54:55) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+Completed in 79ms (View: 56, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 19:54:56) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;35;1mRound Load (0.3ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+Completed in 45ms (View: 15, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 19:54:56) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.3ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '5' AND "seatings"."division_id" = '1' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+Completed in 94ms (View: 15, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
