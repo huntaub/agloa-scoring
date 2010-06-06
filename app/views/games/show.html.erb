@@ -7,8 +7,12 @@
   <b>Scoring Model:</b>
   <%=h @game.scoringModel %>
 </p>
+<% Division.all.each do |d| %>
+	<%= link_to d.name, {:action => :show, :division => d.id, :id => @game.id} %>
+<% end %>
+<br/>
 <% if (@scores.length > 0 && @superNil) %>
-	<h2> Top <%= @scores.length %> Players </h2>
+	<h2> Top <%= @scores.length %> Players in <%= @division.name %> </h2>
 	<table>
 		<tr>
 			<th> Rank </th>
@@ -26,7 +30,7 @@
 	<% end %>
 	</table>
 	
-	<h2> Top <%= @teams.length %> Teams </h2>
+	<h2> Top <%= @teams.length %> Teams in <%= @division.name %> </h2>
 	<table>
 		<tr>
 			<th> Rank </th>
@@ -53,8 +57,8 @@
 <% @rounds.each_with_index do |round, r| %>
 <tr>
 	<th> <%= (r+1) %> </th>
-	<th> <%= link_to "Score", {:action => :score, :round => round.id} %> </th>
-	<th> <%= link_to "Seating Chart", {:action => :score, :round => round.id} %> </th>
+	<th> <%= link_to "Score", {:action => :score, :round => round.id, :division => @division.id} %> </th>
+	<th> <%= link_to "Seating Chart" %> </th>
 </tr>
 <% end %>
 </table>

@@ -24,13 +24,15 @@ class GamesController < ApplicationController
 	@superNil = false
 	@rounds.each_with_index do |round, index|
 	  round.scores.each do |s|
-	    if index == 0
-	      s.player.totScore = 0
-	      @scores << s.player
+	    if s.player.division == @division
+		    if index == 0
+		      s.player.totScore = 0
+		      @scores << s.player
+		    end
+		      if (!(s.score.nil?))
+		        @scores[@scores.index(s.player)].totScore += s.score
+		      end
 	    end
-	      if (!(s.score.nil?))
-	        @scores[@scores.index(s.player)].totScore += s.score
-	      end
 	  end
 	end
 	@scores.sort! { |a,b| b.totScore <=> a.totScore }
@@ -52,7 +54,7 @@ class GamesController < ApplicationController
 	  end
 	end
 	if (@scores.length > 0 && @superNil)
-		@teams = Team.find_all_by_tournament_id(@game.tournament.id)
+		@teams = Team.find_all_by_tournament_id_and_division_id(@game.tournament.id, @division.id)
 		if (@teams.length > 1)
 			@teams.sort! do |a,b|
 				count = 0
