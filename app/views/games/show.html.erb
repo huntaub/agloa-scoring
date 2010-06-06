@@ -58,7 +58,7 @@
 <tr>
 	<th> <%= (r+1) %> </th>
 	<th> <%= link_to "Score", {:action => :score, :round => round.id, :division => @division.id} %> </th>
-	<th> <%= link_to "Seating Chart" %> </th>
+	<th> <%= link_to "Seating Chart", {:action => :seat, :round => round.id, :division => @division.id} %> </th>
 </tr>
 <% end %>
 </table>

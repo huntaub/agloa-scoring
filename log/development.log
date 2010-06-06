@@ -15563,3 +15563,517 @@ Rendering games/show
   [4;35;1mDivision Load (0.3ms)[0m   [0mSELECT * FROM "divisions" [0m
   [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
 Completed in 31ms (View: 10, DB: 2) | 200 OK [http://localhost/games/2?division=2]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-06 00:37:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDivision Load (0.5ms)[0m   [0mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 2) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;36;1mDivision Load (0.1ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."tournament_id" = 1 AND "teams"."division_id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 4) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 5) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mLocation Load (0.1ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 88ms (View: 11, DB: 3) | 200 OK [http://localhost/games/2]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-06 00:37:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDivision Load (0.5ms)[0m   [0mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 2) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;36;1mDivision Load (0.1ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."tournament_id" = 1 AND "teams"."division_id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 4) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 5) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 86ms (View: 55, DB: 3) | 200 OK [http://localhost/games/2]
+
+
+Processing GamesController#score (for 127.0.0.1 at 2010-06-06 00:38:23) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 1) [0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".division_id = 1) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 19 AND "scores"."round_id" = 1) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 22 AND "scores"."round_id" = 1) LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/score
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 19 AND "scores"."round_id" = 1) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 22 AND "scores"."round_id" = 1) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+Completed in 31ms (View: 11, DB: 2) | 200 OK [http://localhost/games/2/score?division=1&round=1]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-06 00:38:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDivision Load (0.5ms)[0m   [0;1mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 2) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."tournament_id" = 1 AND "teams"."division_id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 4) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 5) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;35;1mDivision Load (0.3ms)[0m   [0mSELECT * FROM "divisions" [0m
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 95ms (View: 14, DB: 3) | 200 OK [http://localhost/games/2]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-06 00:38:29) [GET]
+  Parameters: {"division"=>"1", "id"=>"seat", "round"=>"1"}
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mGame Load (0.1ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Game with ID=seat):
+  app/controllers/games_controller.rb:21:in `show'
+
+Rendered rescues/_trace (27.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-06 00:38:42) [GET]
+  Parameters: {"division"=>"1", "id"=>"seat", "round"=>"1"}
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Game with ID=seat):
+  app/controllers/games_controller.rb:21:in `show'
+
+Rendered rescues/_trace (32.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-06 00:38:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDivision Load (0.5ms)[0m   [0;1mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 2) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."tournament_id" = 1 AND "teams"."division_id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 4) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 5) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;35;1mDivision Load (0.3ms)[0m   [0mSELECT * FROM "divisions" [0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 44ms (View: 15, DB: 3) | 200 OK [http://localhost/games/2]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 00:38:45) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+
+ActionController::UnknownAction (No action responded to seat. Actions: create, destroy, edit, index, new, new_round, score, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 00:44:16) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+
+ActionController::UnknownAction (No action responded to seat. Actions: create, destroy, edit, index, new, new_round, score, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-06 00:44:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDivision Load (0.7ms)[0m   [0;1mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 2) [0m
+  [4;35;1mScore Load (0.6ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mTournament Load (0.3ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."tournament_id" = 1 AND "teams"."division_id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 4) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 5) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" [0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 93ms (View: 12, DB: 4) | 200 OK [http://localhost/games/2]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-06 00:44:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 19ms (View: 9, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-06 00:44:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 22ms (View: 12, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-06 00:49:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 24ms (View: 13, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-06 00:49:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDivision Load (0.4ms)[0m   [0;1mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 2) [0m
+  [4;35;1mScore Load (0.3ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 1) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;35;1mDivision Load (0.3ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."tournament_id" = 1 AND "teams"."division_id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 4) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 5) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" [0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 85ms (View: 11, DB: 3) | 200 OK [http://localhost/games/2]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-06 00:49:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 20ms (View: 10, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-06 00:49:48) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mDivision Load (0.5ms)[0m   [0;1mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 3) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 3) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 3) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTournament Load (0.3ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."tournament_id" = 1 AND "teams"."division_id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 4) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 5) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;36;1mDivision Load (0.3ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mLocation Load (0.1ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 88ms (View: 11, DB: 3) | 200 OK [http://localhost/games/3]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-06 00:49:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 19ms (View: 9, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-06 00:50:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDivision Load (0.5ms)[0m   [0mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 2) [0m
+  [4;36;1mScore Load (0.5ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 22) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."tournament_id" = 1 AND "teams"."division_id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 4) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 5) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 95ms (View: 12, DB: 4) | 200 OK [http://localhost/games/2]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 00:50:03) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+
+ActionView::MissingTemplate (Missing template games/seat.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 00:51:34) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+
+ActionView::MissingTemplate (Missing template games/seat.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 00:51:50) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+
+ActionView::MissingTemplate (Missing template games/seat.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 00:52:01) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/games/2/seat?division=1&round=1]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 00:53:03) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/games/2/seat?division=1&round=1]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 00:58:48) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/games/2/seat?division=1&round=1]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTournaments (20100603025638)
+Migrating to CreateGames (20100603025703)
+Migrating to CreateDivisions (20100603025735)
+Migrating to CreateTeams (20100603030014)
+Migrating to CreateLocations (20100603030031)
+Migrating to CreatePlayers (20100603030143)
+Migrating to AddColumnsToTournament (20100605060205)
+Migrating to AddReferenceToGames (20100605152401)
+Migrating to CreateScores (20100605154000)
+Migrating to AddTournamentReferenceToDivision (20100605154325)
+Migrating to CreateRounds (20100605211254)
+Migrating to AddRoundIdToScore (20100605211550)
+Migrating to CreateSeatings (20100606045956)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "seatings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "game_id" integer, "round_id" integer, "division_id" integer, "html" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100606045956')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("divisions")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("games")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("locations")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("players")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("rounds")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("scores")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("seatings")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("teams")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tournaments")[0m
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 01:03:41) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."game_id" IS NULL AND "seatings"."division_id" IS NULL) LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/games/2/seat?division=1&round=1]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 01:04:31) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '1' AND "seatings"."game_id" = '2' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/games/2/seat?division=1&round=1]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 01:06:39) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '1' AND "seatings"."game_id" = '2' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/games/2/seat?division=1&round=1]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 01:07:50) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '1' AND "seatings"."game_id" = '2' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 1) [0m
+  [4;36;1mDivision Load (0.1ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 19ms (View: 5, DB: 1) | 200 OK [http://localhost/games/2/seat?division=1&round=1]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 01:07:53) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1", "regenerate"=>"true"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '1' AND "seatings"."game_id" = '2' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 1) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 18ms (View: 3, DB: 1) | 200 OK [http://localhost/games/2/seat?division=1&regenerate=true&round=1]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 01:07:59) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '1' AND "seatings"."game_id" = '2' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 1) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 20ms (View: 5, DB: 1) | 200 OK [http://localhost/games/2/seat?division=1&round=1]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 01:08:14) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '1' AND "seatings"."game_id" = '2' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 1) [0m
+  [4;36;1mDivision Load (0.3ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+
+NoMethodError (undefined method `scoringMethod' for #<Game:0x1051295e8>):
+  app/controllers/games_controller.rb:194:in `seat'
+
+Rendered rescues/_trace (26.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 01:08:21) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '1' AND "seatings"."game_id" = '2' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 1) [0m
+  [4;36;1mDivision Load (0.1ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 19ms (View: 3, DB: 1) | 200 OK [http://localhost/games/2/seat?division=1&round=1]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-06 01:22:02) [GET]
+  Parameters: {"division"=>"1", "id"=>"2", "round"=>"1"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."round_id" = '1' AND "seatings"."game_id" = '2' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 2) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 1) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 2) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 89ms (View: 3, DB: 1) | 200 OK [http://localhost/games/2/seat?division=1&round=1]
+
+
+Processing TournamentsController#index (for 127.0.0.1 at 2010-06-06 01:22:52) [GET]
+  [4;36;1mTournament Load (0.5ms)[0m   [0;1mSELECT * FROM "tournaments" [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/]

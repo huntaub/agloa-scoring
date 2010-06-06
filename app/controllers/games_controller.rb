@@ -184,4 +184,19 @@ class GamesController < ApplicationController
     Round.create(:game_id => params[:id])
     redirect_to :action => :show, :id => params[:id]
   end
+  
+  def seat
+    @currentSeat = Seating.find_by_game_id_and_division_id_and_round_id(params[:id], params[:division], params[:round])
+    if @currentSeat.nil? || !(params[:regenerate].nil?)
+      @game = Game.find(params[:id])
+      @round = Round.find(params[:round])
+      @division = Division.find(params[:division])
+      if @game.scoringModel == "Table"
+        if @game.rounds.index(@round) == 0
+       	  ####Random seating
+       	  
+        end
+      end
+    end
+  end
 end

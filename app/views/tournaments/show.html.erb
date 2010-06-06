@@ -27,10 +27,10 @@
    
    <p>
      <%= f.label :scoring_method %><br />
-     <%= f.text_field :scoringModel %>
+     <%= select(@game, :scoringModel, ["Table", "Cube"]) %>
    </p>
    <p>
-     <%= f.submit 'Create Player' %>
+     <%= f.submit 'Create Game' %>
    </p>
  <% end %>
  </div>

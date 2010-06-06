@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :scoringModel %><br />
-    <%= f.text_field :scoringModel %>
+    <%= select(@game, :scoringModel, ["Table", "Cube"]) %> 
   </p>
   <p>
     <%= f.submit 'Create' %>

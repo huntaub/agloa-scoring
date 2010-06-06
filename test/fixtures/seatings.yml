@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  game_id: 1
+  round_id: 1
+  division_id: 1
+  html: MyText
+
+two:
+  game_id: 1
+  round_id: 1
+  division_id: 1
+  html: MyText

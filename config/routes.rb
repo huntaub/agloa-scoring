@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :divisions
 
-  map.resources :games, :member => { :score => :get, :new_round => :get }
+  map.resources :games, :member => { :score => :get, :new_round => :get, :seat => :get }
 
   map.resources :tournaments
 
