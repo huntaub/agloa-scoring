@@ -24,7 +24,7 @@ class GamesController < ApplicationController
 	@superNil = false
 	@rounds.each_with_index do |round, index|
 	  round.scores.each do |s|
-	    if s.player.division == @division
+	    if s.player.team.division == @division
 		    if index == 0
 		      s.player.totScore = 0
 		      @scores << s.player
@@ -36,7 +36,7 @@ class GamesController < ApplicationController
 	  end
 	end
 	@scores.sort! { |a,b| b.totScore <=> a.totScore }
-	@scores = @scores[0..10]
+	@scores = @scores[0..9]
 	@scores.each_with_index do |item, index|
 	  if !item.totScore.nil?
 	  	  @superNil = true
@@ -55,6 +55,7 @@ class GamesController < ApplicationController
 	end
 	if (@scores.length > 0 && @superNil)
 		@teams = Team.find_all_by_tournament_id_and_division_id(@game.tournament.id, @division.id)
+		@teams.each {|t| puts t.name}
 		if (@teams.length > 1)
 			@teams.sort! do |a,b|
 				count = 0
@@ -78,9 +79,10 @@ class GamesController < ApplicationController
 				b.teamScore <=> a.teamScore
 			end
 		end
-		@teams = @teams[0..10]
+		@teams.each {|t| puts t.name+' score: '+t.teamScore.to_s}
+		@teams = @teams[0..2]
 		@teams.each_with_index do |item, index|
-		  if item.teamScore == 0
+		  if item.teamScore == 0 || item.teamScore.nil?
 		    @teams.delete(item)
 		  else
 			  if index == 0
@@ -180,7 +182,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @players = @division.players
     @players.each do |p|
-      if Score.find_by_player_id_and_round_id(p.id, @round.id).nil?
+      if Score.find_by_player_id_and_round_id(p.id, @round.id).nil? && team_plays_game?(p.team, @game)
         @round.scores << Score.new(:player_id => p.id, :player => p, :round => @round, :round_id => @round.id)
       end
     end
@@ -251,7 +253,12 @@ class GamesController < ApplicationController
        	    puts 'Table ' + i.to_s 
        	    p.each {|a| puts a.name}
        	  end
-       	  @currentSeat = Seating.create(:game_id => @game.id, :html => @tables, :round_id => @round.id, :division_id => @division.id)
+       	  if @currentSeat.nil?
+       	  	@currentSeat = Seating.create(:game_id => @game.id, :html => @tables, :round_id => @round.id, :division_id => @division.id)
+       	  else
+       	    @currentSeat.html = @tables
+       	    @currentSeat.save!
+       	  end
         end
         render 'table'
       end
