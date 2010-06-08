@@ -6,12 +6,16 @@
   		<th>Name</th>
   		<th>ID</th>
   		<th>Team</th>
+  		<th>Score</th>
   	</tr>
   <% table.each do |p| %>
   <tr>
     <td><%= p.name %></td>
     <td><%= p.id %></td>
     <td><%= p.team.name %></td>
+    <% if !(p.totScore.nil?) %>
+    <td><%= p.totScore %></td>
+    <% end %>
   </tr>
   <% end %>
   </table>

@@ -21,4 +21,5 @@
 
 <br />
 
-<%= link_to 'New team', new_team_path+'/'+params[:id] %>
+<%= link_to 'New team', new_team_path+'/'+params[:id] %> | 
+<%= link_to 'Back To Tournament', Tournament.find(params[:id]) %> 

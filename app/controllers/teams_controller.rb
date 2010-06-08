@@ -49,8 +49,10 @@ class TeamsController < ApplicationController
     params[:team].delete(:bit_wise)
     @team = Team.new(params[:team])
     @team.bitwise_games_played = 0
-    bitwise.each do |b|
-		@team.bitwise_games_played |= b.to_i
+    if !bitwise.nil?
+	    bitwise.each do |b|
+			@team.bitwise_games_played |= b.to_i
+		end
 	end
     respond_to do |format|
       if @team.save
@@ -91,10 +93,11 @@ class TeamsController < ApplicationController
   # DELETE /teams/1.xml
   def destroy
     @team = Team.find(params[:id])
+    tournament = @team.tournament
     @team.destroy
 
     respond_to do |format|
-      format.html { redirect_to(teams_url) }
+      format.html { redirect_to(teams_url+'/?id='+tournament.id.to_s) }
       format.xml  { head :ok }
     end
   end

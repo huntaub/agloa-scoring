@@ -237,7 +237,7 @@ class GamesController < ApplicationController
 		       	        end
 		       	      end
 		       	      if !anythingWrong || countOfAttempts > 10
-		       	      	puts 'Seated '+player.name
+		       	      	puts 'Seated '+player.name+' after '+countOfAttempts.to_s+' tries.'
 		       	        playerSeated = true
 		       	        @tables.at(tableToSeat).push player
 		       	      else
@@ -259,6 +259,48 @@ class GamesController < ApplicationController
        	    @currentSeat.html = @tables
        	    @currentSeat.save!
        	  end
+        else
+	      ##Not first round. Seat by score.
+          @game = Game.find(params[:id])
+          @round = Round.find(params[:round])
+          @division = Division.find(params[:division])
+          @rounds = [@round]
+          @rounds += @game.rounds[0..(@game.rounds.index(@round)-1)]
+          numberOfPlayers = 0
+          playersToSeat = []
+          @division.teams.each do |t|
+            if team_plays_game?(t, @game)
+              numberOfPlayers += t.players.length
+              t.players.each do |player|
+                player.totScore = 0
+                @rounds.each do |round|
+                  player.totScore += Score.find_by_player_id_and_round_id(player.id, round.id).score
+                end
+                playersToSeat << player
+              end
+            end
+          end
+          playersToSeat.sort! { |a,b| b.totScore <=> a.totScore }
+          numberOfTables = (numberOfPlayers.to_f/3.to_f).ceil
+          puts numberOfTables
+          @tables = Array.new(numberOfTables)
+          @tables.map! { |x| [] }
+          lastTableSat = 0
+          playersToSeat.each do |player|
+            if @tables[lastTableSat].length < 3
+              @tables[lastTableSat] << player
+            else
+              lastTableSat += 1
+               @tables[lastTableSat] << player
+            end
+          end
+          
+          if @currentSeat.nil?
+          	@currentSeat = Seating.create(:game_id => @game.id, :html => @tables, :round_id => @round.id, :division_id => @division.id)
+          else
+            @currentSeat.html = @tables
+            @currentSeat.save!
+          end
         end
         render 'table'
       end
