@@ -202,116 +202,156 @@ class GamesController < ApplicationController
   end
   
   def seat
-    @currentSeat = Seating.find_by_game_id_and_division_id_and_round_id(params[:id], params[:division], params[:round])
-    if @currentSeat.nil? || !(params[:regenerate].nil?)
       @game = Game.find(params[:id])
       @round = Round.find(params[:round])
       @division = Division.find(params[:division])
       if @game.scoringModel == "Table"
-        if @game.rounds.index(@round) == 0
-       	  ####Random seating
-       	  numberOfPlayers = 0
-       	  teamsPlaying = []
-       	  @division.teams.each do |t|
-       	    if team_plays_game?(t, @game)
-       	      numberOfPlayers += t.players.length
-       	      teamsPlaying << t
-       	    end
-       	  end
-       	  numberOfTables = (numberOfPlayers.to_f/3.to_f).ceil
-       	  puts numberOfTables
-       	  @tables = Array.new(numberOfTables)
-       	  @tables.map! { |x| [] }
-       	  teamsPlaying.each do |team|
-       	    team.players.each do |player|
-       	      playerSeated = false
-       	      countOfAttempts = 0
-       	      while !playerSeated
-	       	      tableToSeat = rand(numberOfTables)
-	       	      #puts 'tableToSeat: '+tableToSeat.to_s
-	       	      if @tables.at(tableToSeat).length < 3
-		       	      anythingWrong = false
-		       	      @tables.at(tableToSeat).each do |tablePlayer|
-		       	        if player.team == tablePlayer.team
-		       	          anythingWrong = true
-		       	        end
-		       	      end
-		       	      if !anythingWrong || countOfAttempts > 10
-		       	      	puts 'Seated '+player.name+' after '+countOfAttempts.to_s+' tries.'
-		       	        playerSeated = true
-		       	        @tables.at(tableToSeat).push player
-		       	      else
-		       	        countOfAttempts += 1
-		       	      end
-	       	      else
-	       	        countOfAttempts += 1
-	       	      end
-       	      end
-       	    end
-       	  end       	  
-       	  @tables.each_with_index do |p, i| 
-       	    puts 'Table ' + i.to_s 
-       	    p.each {|a| puts a.name}
-       	  end
-       	  if @currentSeat.nil?
-       	  	@currentSeat = Seating.create(:game_id => @game.id, :html => @tables, :round_id => @round.id, :division_id => @division.id)
-       	  else
-       	    @currentSeat.html = @tables
-       	    @currentSeat.save!
-       	  end
+        @currentSeat = Seating.find_by_game_id_and_division_id_and_round_id(params[:id], params[:division], params[:round])
+        if @currentSeat.nil? || !(params[:regenerate].nil?)
+	      if @game.rounds.index(@round) == 0
+	        ####Random seating
+	        numberOfPlayers = 0
+	        teamsPlaying = []
+	        @division.teams.each do |t|
+	          if team_plays_game?(t, @game)
+	            numberOfPlayers += t.players.length
+	            teamsPlaying << t
+	          end
+	        end
+	        numberOfTables = (numberOfPlayers.to_f/3.to_f).ceil
+	        puts numberOfTables
+	        @tables = Array.new(numberOfTables)
+	        @tables.map! { |x| [] }
+	        teamsPlaying.each do |team|
+	          team.players.each do |player|
+	            playerSeated = false
+	            countOfAttempts = 0
+	            while !playerSeated
+		     	    tableToSeat = rand(numberOfTables)
+		     	    #puts 'tableToSeat: '+tableToSeat.to_s
+		       	    if @tables.at(tableToSeat).length < 3
+			       	    anythingWrong = false
+			       	    @tables.at(tableToSeat).each do |tablePlayer|
+			       	      if player.team == tablePlayer.team
+			       	        anythingWrong = true
+			       	      end
+			       	    end
+			       	    if !anythingWrong || countOfAttempts > 10
+			       	      puts 'Seated '+player.name+' after '+countOfAttempts.to_s+' tries.'
+			       	      playerSeated = true
+			       	      @tables.at(tableToSeat).push player
+			       	    else
+			       	      countOfAttempts += 1
+			       	    end
+		       	    else
+		       	      countOfAttempts += 1
+		       	    end
+	       	    end
+	       	  end
+	        end       	  
+	     	@tables.each_with_index do |p, i| 
+	       	  puts 'Table ' + i.to_s 
+	       	  p.each {|a| puts a.name}
+	       	end
+	       	if @currentSeat.nil?
+	       	  @currentSeat = Seating.create(:game_id => @game.id, :html => @tables, :round_id => @round.id, :division_id => @division.id)
+	       	else
+	       	  @currentSeat.html = @tables
+	       	  @currentSeat.save!
+	       	end
+	      else
+		    ##Not first round. Seat by score.
+	        @rounds = []
+	        @rounds += @game.rounds[0..(@game.rounds.index(@round)-1)]
+	        numberOfPlayers = 0
+	        playersToSeat = []
+	        @division.teams.each do |t|
+	          if team_plays_game?(t, @game)
+	            numberOfPlayers += t.players.length
+	            t.players.each do |player|
+	              player.totScore = 0
+	              @rounds.each do |round|
+	                player.totScore += Score.find_by_player_id_and_round_id(player.id, round.id).score
+	              end
+	              playersToSeat << player
+	            end
+	          end
+	        end
+	        playersToSeat.sort! { |a,b| b.totScore <=> a.totScore }
+	        numberOfTables = (numberOfPlayers.to_f/3.to_f).ceil
+	        puts numberOfTables
+	        @tables = Array.new(numberOfTables)
+	        @tables.map! { |x| [] }
+	        lastTableSat = 0
+	        playersToSeat.each do |player|
+	          if @tables[lastTableSat].length < 3
+	            @tables[lastTableSat] << player
+	          else
+	            lastTableSat += 1
+	             @tables[lastTableSat] << player
+	          end
+	        end
+	        
+	        if @currentSeat.nil?
+	         @currentSeat = Seating.create(:game_id => @game.id, :html => @tables, :round_id => @round.id, :division_id => @division.id)
+	        else
+	          @currentSeat.html = @tables
+	          @currentSeat.save!
+	        end
+	      end
+	      render 'table'
         else
-	      ##Not first round. Seat by score.
           @game = Game.find(params[:id])
           @round = Round.find(params[:round])
           @division = Division.find(params[:division])
-          @rounds = [@round]
-          @rounds += @game.rounds[0..(@game.rounds.index(@round)-1)]
-          numberOfPlayers = 0
-          playersToSeat = []
-          @division.teams.each do |t|
-            if team_plays_game?(t, @game)
-              numberOfPlayers += t.players.length
-              t.players.each do |player|
-                player.totScore = 0
-                @rounds.each do |round|
-                  player.totScore += Score.find_by_player_id_and_round_id(player.id, round.id).score
-                end
-                playersToSeat << player
-              end
-            end
-          end
-          playersToSeat.sort! { |a,b| b.totScore <=> a.totScore }
-          numberOfTables = (numberOfPlayers.to_f/3.to_f).ceil
-          puts numberOfTables
-          @tables = Array.new(numberOfTables)
-          @tables.map! { |x| [] }
-          lastTableSat = 0
-          playersToSeat.each do |player|
-            if @tables[lastTableSat].length < 3
-              @tables[lastTableSat] << player
-            else
-              lastTableSat += 1
-               @tables[lastTableSat] << player
-            end
-          end
-          
-          if @currentSeat.nil?
-          	@currentSeat = Seating.create(:game_id => @game.id, :html => @tables, :round_id => @round.id, :division_id => @division.id)
-          else
-            @currentSeat.html = @tables
-            @currentSeat.save!
+          if @game.scoringModel == "Table"
+            @tables = @currentSeat.html
+            render 'table'
           end
         end
-        render 'table'
-      end
-    else
-      @game = Game.find(params[:id])
-      @round = Round.find(params[:round])
-      @division = Division.find(params[:division])
-      if @game.scoringModel == "Table"
-        @tables = @currentSeat.html
-        render 'table'
+      else
+        ##Cube Based Game!!
+        @currentSeat = Seating.find_by_game_id_and_division_id(params[:id], params[:division])
+        if @currentSeat.nil? || !(params[:regenerate].nil?)
+	      	numberOfTeams = 0
+	      	teamsPlaying = []
+	      	@division.teams.each do |t|
+	      	  if team_plays_game?(t, @game)
+	      	    numberOfTeams += 1
+	      	    teamsPlaying << t
+	      	  end
+	      	end
+	      	numberOfSubDivisions = (teamsPlaying.length.to_f/9.to_f).ceil
+	      	teamsInEachDivision = (teamsPlaying.length.to_f/numberOfSubDivisions.to_f).floor
+	      	@subdivisions = Array.new(numberOfSubDivisions)
+	      	@subdivisions.map! {|x| [] }
+	      	teamsPlaying.each do |t|
+	      	   anythingWrong = false
+	      	   seated = false
+	      	   counter = 0
+	      	   while !seated
+	      	     subToSeat = rand(numberOfSubDivisions)
+		      	 @subdivisions[subToSeat].each do |f|
+		      	   if f.location_id == t.location_id
+		      	     anythingWrong = true
+		      	   end
+		      	 end
+		      	 if (!anythingWrong || counter > 10) && @subdivisions[subToSeat].length <= teamsInEachDivision
+		      	   seated = true
+		      	   @subdivisions[subToSeat] << t
+		      	 end
+	      	     counter += 1
+	      	   end
+	      	   if @currentSeat.nil?
+	      	     @currentSeat = Seating.create(:game_id => @game.id, :html => @subdivisions, :division_id => @division.id)
+	      	   else
+	      	     @currentSeat.html = @subdivisions
+	      	     @currentSeat.save!
+	      	   end
+	      	end
+	    else
+	      @subdivisions = @currentSeat.html
+	    end
       end
     end
-  end
 end

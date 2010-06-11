@@ -33706,3 +33706,3097 @@ Completed in 33ms (View: 14, DB: 2) | 200 OK [http://localhost/games/13/seat?div
   [4;36;1mSeating Load (0.5ms)[0m   [0;1mSELECT * FROM "seatings" [0m
   [4;35;1mSeating Load (0.5ms)[0m   [0mSELECT * FROM "seatings" [0m
   [4;36;1mSeating Load (0.9ms)[0m   [0;1mSELECT * FROM "seatings" [0m
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:44:06) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"6"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '6' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+Completed in 34ms (View: 14, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=6]
+
+
+Processing GamesController#score (for 127.0.0.1 at 2010-06-07 21:44:10) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"6"}
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mPlayer Load (1.1ms)[0m   [0;1mSELECT "players".* FROM "players" INNER JOIN "teams" ON "players".team_id = "teams".id WHERE (("teams".division_id = 1)) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 23 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 24 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 25 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 26 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 27 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 28 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 29 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 30 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 31 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 32 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 33 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 34 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 35 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 36 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 37 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 38 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 39 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 40 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 41 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 42 AND "scores"."round_id" = 6) LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/score
+  [4;35;1mDivision Load (0.5ms)[0m   [0mSELECT * FROM "divisions" [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 23 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (1.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 6) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 24 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 25 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 25) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 26 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 26) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 27 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 27) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 28 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 28) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 29 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 29) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 30 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 30) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 31 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 31) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 32 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 32) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 33 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 33) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 34 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 34) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 35 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 35) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 36 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 36) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 37 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 37) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 38 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 39 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 39) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 40 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 40) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 41 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 41) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 42 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 42) [0m
+Completed in 165ms (View: 88, DB: 10) | 200 OK [http://localhost/games/13/score?division=1&round=6]
+
+
+Processing GamesController#update (for 127.0.0.1 at 2010-06-07 21:44:15) [PUT]
+  Parameters: {"game"=>{"rounds_attributes"=>{"6"=>{"scores_attributes"=>{"0"=>{"id"=>"82", "score"=>"2"}}, "id"=>"6"}, "11"=>{"scores_attributes"=>{"0"=>{"id"=>"87", "score"=>"14"}}, "id"=>"6"}, "7"=>{"scores_attributes"=>{"0"=>{"id"=>"83", "score"=>"22"}}, "id"=>"6"}, "12"=>{"scores_attributes"=>{"0"=>{"id"=>"88", "score"=>"30"}}, "id"=>"6"}, "8"=>{"scores_attributes"=>{"0"=>{"id"=>"84", "score"=>"62"}}, "id"=>"6"}, "13"=>{"scores_attributes"=>{"0"=>{"id"=>"89", "score"=>"60"}}, "id"=>"6"}, "9"=>{"scores_attributes"=>{"0"=>{"id"=>"85", "score"=>"70"}}, "id"=>"6"}, "14"=>{"scores_attributes"=>{"0"=>{"id"=>"90", "score"=>"68"}}, "id"=>"6"}, "15"=>{"scores_attributes"=>{"0"=>{"id"=>"91", "score"=>"4"}}, "id"=>"6"}, "0"=>{"scores_attributes"=>{"0"=>{"id"=>"76", "score"=>"52"}}, "id"=>"6"}, "16"=>{"scores_attributes"=>{"0"=>{"id"=>"92", "score"=>"6"}}, "id"=>"6"}, "1"=>{"scores_attributes"=>{"0"=>{"id"=>"77", "score"=>"66"}}, "id"=>"6"}, "17"=>{"scores_attributes"=>{"0"=>{"id"=>"93", "score"=>"12"}}, "id"=>"6"}, "2"=>{"scores_attributes"=>{"0"=>{"id"=>"78", "score"=>"10"}}, "id"=>"6"}, "18"=>{"scores_attributes"=>{"0"=>{"id"=>"94", "score"=>"52"}}, "id"=>"6"}, "3"=>{"scores_attributes"=>{"0"=>{"id"=>"79", "score"=>"6"}}, "id"=>"6"}, "19"=>{"scores_attributes"=>{"0"=>{"id"=>"95", "score"=>"38"}}, "id"=>"6"}, "4"=>{"scores_attributes"=>{"0"=>{"id"=>"80", "score"=>"24"}}, "id"=>"6"}, "10"=>{"scores_attributes"=>{"0"=>{"id"=>"86", "score"=>"42"}}, "id"=>"6"}, "5"=>{"scores_attributes"=>{"0"=>{"id"=>"81", "score"=>"36"}}, "id"=>"6"}}}, "commit"=>"Save Scores", "authenticity_token"=>"1LcdewTHVSflUMsuMseDjUCnnKPiDm/Q2vVxFudNMXY=", "id"=>"13"}
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mScore Load (1.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 6) [0m
+Redirected to http://localhost:3000/games/13
+Completed in 161ms (DB: 1) | 302 Found [http://localhost/games/13]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-07 21:44:15) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mDivision Load (0.5ms)[0m   [0mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.3ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mScore Load (0.9ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 5) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 23) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 25) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 26) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 27) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 28) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 29) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 30) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 31) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 32) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 38) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 39) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 40) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 41) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 42) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 33) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 34) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 35) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 36) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 37) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mScore Load (0.9ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 25) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 26) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 27) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 28) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 29) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 30) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 31) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 32) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 33) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 34) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 35) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 36) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 37) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 39) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 40) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 41) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 42) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mTeam Load (0.4ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."division_id" = 1 AND "teams"."tournament_id" = 1) [0m
+  [4;36;1mPlayer Load (0.5ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 128ms (View: 10, DB: 9) | 200 OK [http://localhost/games/13]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:44:24) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"6"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '6' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+Completed in 79ms (View: 14, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=6]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:44:26) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '5' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;35;1mRound Load (0.3ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+Completed in 77ms (View: 56, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:44:30) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"6"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '6' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+Completed in 34ms (View: 14, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=6]
+
+
+Processing TournamentsController#index (for 127.0.0.1 at 2010-06-07 21:44:50) [GET]
+  [4;35;1mTournament Load (0.6ms)[0m   [0mSELECT * FROM "tournaments" [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing TournamentsController#index (for 127.0.0.1 at 2010-06-07 21:44:52) [GET]
+  [4;36;1mTournament Load (0.5ms)[0m   [0;1mSELECT * FROM "tournaments" [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-07 21:44:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTournament Load (0.3ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-07 21:44:55) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mDivision Load (0.5ms)[0m   [0mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mScore Load (1.0ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 5) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 23) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 25) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 26) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 27) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 28) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 29) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 30) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 31) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 32) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 38) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 39) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 40) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 41) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 42) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 33) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 34) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 35) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 36) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 37) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mScore Load (0.9ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 25) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 26) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 27) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 28) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 29) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 30) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 31) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 32) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 33) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 34) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 35) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 36) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 37) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 39) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 40) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 41) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 42) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."division_id" = 1 AND "teams"."tournament_id" = 1) [0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;36;1mDivision Load (0.3ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 129ms (View: 11, DB: 10) | 200 OK [http://localhost/games/13]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:44:56) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"5"}
+  [4;36;1mSeating Load (0.3ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '5' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 5) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+Completed in 81ms (View: 61, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=5]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-07 21:44:57) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mDivision Load (0.5ms)[0m   [0mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mScore Load (0.9ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 5) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 23) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 25) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 26) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 27) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 28) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 29) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 30) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 31) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 32) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 38) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 39) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 40) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 41) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 42) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 33) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 34) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 35) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 36) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 37) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mScore Load (0.9ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 23) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 25) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 26) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 27) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 28) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 29) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 30) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 31) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 32) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 33) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 34) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 35) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 36) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 37) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 39) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 40) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 41) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 42) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."division_id" = 1 AND "teams"."tournament_id" = 1) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;36;1mDivision Load (0.3ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 84ms (View: 11, DB: 9) | 200 OK [http://localhost/games/13]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:44:59) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"6"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '6' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+Completed in 35ms (View: 14, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=6]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:46:27) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"6", "regenerate"=>"true"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '6' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;36;1mDivision Load (0.1ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mTeam Load (0.5ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 23 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 23 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 24 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 24 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 25 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 25 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 26 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 26 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 27 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 27 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 28 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 28 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 29 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 29 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 30 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 30 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 31 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 31 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 32 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 32 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 33 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 33 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 34 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 34 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 35 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 35 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 36 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 36 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 37 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 37 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 38 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 38 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 39 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 39 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 40 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 40 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 41 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 41 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 42 AND "scores"."round_id" = 6) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 42 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mSeating Update (0.4ms)[0m   [0mUPDATE "seatings" SET "html" = '--- 
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Brent Lippert
+ created_at: 2010-06-06 17:57:58
+ updated_at: 2010-06-06 17:57:58
+ id: "32"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Brett Jordan
+ created_at: 2010-06-06 17:54:28
+ updated_at: 2010-06-06 17:54:28
+ id: "24"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Jonathan Lin
+ created_at: 2010-06-06 18:39:45
+ updated_at: 2010-06-06 18:39:45
+ id: "41"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Hunter Leath
+ created_at: 2010-06-06 17:54:18
+ updated_at: 2010-06-06 17:54:18
+ id: "23"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Sam Jung
+ created_at: 2010-06-06 18:38:49
+ updated_at: 2010-06-06 18:38:49
+ id: "37"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Tyler Stern
+ created_at: 2010-06-06 17:55:23
+ updated_at: 2010-06-06 17:55:23
+ id: "28"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Jea Du Kim
+ created_at: 2010-06-06 17:57:45
+ updated_at: 2010-06-06 17:57:45
+ id: "31"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Ben Bartolome
+ created_at: 2010-06-06 18:38:32
+ updated_at: 2010-06-06 18:38:32
+ id: "35"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Kate Evans
+ created_at: 2010-06-06 17:57:33
+ updated_at: 2010-06-06 17:57:37
+ id: "30"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Stephen Schwartz
+ created_at: 2010-06-06 17:54:56
+ updated_at: 2010-06-06 17:54:56
+ id: "27"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Nowrin Chowdhury
+ created_at: 2010-06-06 18:39:52
+ updated_at: 2010-06-06 18:39:52
+ id: "42"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Dustin Wright
+ created_at: 2010-06-06 18:38:40
+ updated_at: 2010-06-06 18:38:40
+ id: "36"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Ridwan Syed
+ created_at: 2010-06-06 18:38:18
+ updated_at: 2010-06-06 18:38:18
+ id: "33"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Sahil Patel
+ created_at: 2010-06-06 18:39:19
+ updated_at: 2010-06-06 18:39:19
+ id: "38"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Shoham Das
+ created_at: 2010-06-06 18:39:36
+ updated_at: 2010-06-06 18:39:36
+ id: "40"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: John Campos
+ created_at: 2010-06-06 18:38:25
+ updated_at: 2010-06-06 18:38:25
+ id: "34"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Julie Chow
+ created_at: 2010-06-06 17:54:42
+ updated_at: 2010-06-06 17:54:42
+ id: "25"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Senthil Natarajan
+ created_at: 2010-06-06 18:39:28
+ updated_at: 2010-06-06 18:39:28
+ id: "39"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Michael Liu
+ created_at: 2010-06-06 17:54:49
+ updated_at: 2010-06-06 17:54:49
+ id: "26"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Lucy Yang
+ created_at: 2010-06-06 17:55:28
+ updated_at: 2010-06-06 17:55:28
+ id: "29"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+' WHERE "id" = 21[0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+Completed in 118ms (View: 9, DB: 10) | 200 OK [http://localhost/games/13/seat?division=1&regenerate=true&round=6]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:46:53) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"6", "regenerate"=>"true"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '6' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.4ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 23 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 24 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 25 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 26 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 27 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 28 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 29 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 30 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 31 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 32 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 33 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 34 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 35 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 36 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 37 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 38 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 39 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 40 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 41 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 42 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mSeating Update (5.9ms)[0m   [0;1mUPDATE "seatings" SET "updated_at" = '2010-06-08 01:46:53', "html" = '--- 
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Kate Evans
+ created_at: 2010-06-06 17:57:33
+ updated_at: 2010-06-06 17:57:37
+ id: "30"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Brent Lippert
+ created_at: 2010-06-06 17:57:58
+ updated_at: 2010-06-06 17:57:58
+ id: "32"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Jonathan Lin
+ created_at: 2010-06-06 18:39:45
+ updated_at: 2010-06-06 18:39:45
+ id: "41"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Tyler Stern
+ created_at: 2010-06-06 17:55:23
+ updated_at: 2010-06-06 17:55:23
+ id: "28"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Stephen Schwartz
+ created_at: 2010-06-06 17:54:56
+ updated_at: 2010-06-06 17:54:56
+ id: "27"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Ben Bartolome
+ created_at: 2010-06-06 18:38:32
+ updated_at: 2010-06-06 18:38:32
+ id: "35"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Hunter Leath
+ created_at: 2010-06-06 17:54:18
+ updated_at: 2010-06-06 17:54:18
+ id: "23"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Brett Jordan
+ created_at: 2010-06-06 17:54:28
+ updated_at: 2010-06-06 17:54:28
+ id: "24"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Sahil Patel
+ created_at: 2010-06-06 18:39:19
+ updated_at: 2010-06-06 18:39:19
+ id: "38"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Sam Jung
+ created_at: 2010-06-06 18:38:49
+ updated_at: 2010-06-06 18:38:49
+ id: "37"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Shoham Das
+ created_at: 2010-06-06 18:39:36
+ updated_at: 2010-06-06 18:39:36
+ id: "40"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Jea Du Kim
+ created_at: 2010-06-06 17:57:45
+ updated_at: 2010-06-06 17:57:45
+ id: "31"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Nowrin Chowdhury
+ created_at: 2010-06-06 18:39:52
+ updated_at: 2010-06-06 18:39:52
+ id: "42"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Ridwan Syed
+ created_at: 2010-06-06 18:38:18
+ updated_at: 2010-06-06 18:38:18
+ id: "33"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: John Campos
+ created_at: 2010-06-06 18:38:25
+ updated_at: 2010-06-06 18:38:25
+ id: "34"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Julie Chow
+ created_at: 2010-06-06 17:54:42
+ updated_at: 2010-06-06 17:54:42
+ id: "25"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Senthil Natarajan
+ created_at: 2010-06-06 18:39:28
+ updated_at: 2010-06-06 18:39:28
+ id: "39"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Dustin Wright
+ created_at: 2010-06-06 18:38:40
+ updated_at: 2010-06-06 18:38:40
+ id: "36"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Lucy Yang
+ created_at: 2010-06-06 17:55:28
+ updated_at: 2010-06-06 17:55:28
+ id: "29"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Michael Liu
+ created_at: 2010-06-06 17:54:49
+ updated_at: 2010-06-06 17:54:49
+ id: "26"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+' WHERE "id" = 21[0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+Completed in 115ms (View: 9, DB: 12) | 200 OK [http://localhost/games/13/seat?division=1&regenerate=true&round=6]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:46:59) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"6", "regenerate"=>"true"}
+  [4;35;1mSeating Load (0.3ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '6' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mTeam Load (0.4ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 23 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 24 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 25 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 26 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 27 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 28 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 29 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 30 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 31 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 32 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 33 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 34 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 35 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 36 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 37 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 38 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 39 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 40 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 41 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 42 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mSeating Update (0.5ms)[0m   [0mUPDATE "seatings" SET "html" = '--- 
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Kate Evans
+ created_at: 2010-06-06 17:57:33
+ updated_at: 2010-06-06 17:57:37
+ id: "30"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Brent Lippert
+ created_at: 2010-06-06 17:57:58
+ updated_at: 2010-06-06 17:57:58
+ id: "32"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Jonathan Lin
+ created_at: 2010-06-06 18:39:45
+ updated_at: 2010-06-06 18:39:45
+ id: "41"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Tyler Stern
+ created_at: 2010-06-06 17:55:23
+ updated_at: 2010-06-06 17:55:23
+ id: "28"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Stephen Schwartz
+ created_at: 2010-06-06 17:54:56
+ updated_at: 2010-06-06 17:54:56
+ id: "27"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Ben Bartolome
+ created_at: 2010-06-06 18:38:32
+ updated_at: 2010-06-06 18:38:32
+ id: "35"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Hunter Leath
+ created_at: 2010-06-06 17:54:18
+ updated_at: 2010-06-06 17:54:18
+ id: "23"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Brett Jordan
+ created_at: 2010-06-06 17:54:28
+ updated_at: 2010-06-06 17:54:28
+ id: "24"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Sahil Patel
+ created_at: 2010-06-06 18:39:19
+ updated_at: 2010-06-06 18:39:19
+ id: "38"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Sam Jung
+ created_at: 2010-06-06 18:38:49
+ updated_at: 2010-06-06 18:38:49
+ id: "37"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Shoham Das
+ created_at: 2010-06-06 18:39:36
+ updated_at: 2010-06-06 18:39:36
+ id: "40"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Jea Du Kim
+ created_at: 2010-06-06 17:57:45
+ updated_at: 2010-06-06 17:57:45
+ id: "31"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Nowrin Chowdhury
+ created_at: 2010-06-06 18:39:52
+ updated_at: 2010-06-06 18:39:52
+ id: "42"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Ridwan Syed
+ created_at: 2010-06-06 18:38:18
+ updated_at: 2010-06-06 18:38:18
+ id: "33"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: John Campos
+ created_at: 2010-06-06 18:38:25
+ updated_at: 2010-06-06 18:38:25
+ id: "34"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Julie Chow
+ created_at: 2010-06-06 17:54:42
+ updated_at: 2010-06-06 17:54:42
+ id: "25"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Senthil Natarajan
+ created_at: 2010-06-06 18:39:28
+ updated_at: 2010-06-06 18:39:28
+ id: "39"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Dustin Wright
+ created_at: 2010-06-06 18:38:40
+ updated_at: 2010-06-06 18:38:40
+ id: "36"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Lucy Yang
+ created_at: 2010-06-06 17:55:28
+ updated_at: 2010-06-06 17:55:28
+ id: "29"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Michael Liu
+ created_at: 2010-06-06 17:54:49
+ updated_at: 2010-06-06 17:54:49
+ id: "26"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+' WHERE "id" = 21[0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+Completed in 120ms (View: 10, DB: 7) | 200 OK [http://localhost/games/13/seat?division=1&regenerate=true&round=6]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:47:10) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"6"}
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '6' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+Completed in 135ms (View: 69, DB: 2) | 200 OK [http://localhost/games/13/seat?division=1&round=6]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-07 21:47:23) [GET]
+  Parameters: {"division"=>"1", "id"=>"13", "round"=>"6", "regenerate"=>"true"}
+  [4;35;1mSeating Load (0.2ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."division_id" = '1' AND "seatings"."round_id" = '6' AND "seatings"."game_id" = '13') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;36;1mDivision Load (0.1ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mRound Load (0.2ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;36;1mTeam Load (0.4ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 23 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 24 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 25 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 26 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 27 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 28 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 29 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 30 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 31 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 32 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 33 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 34 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 35 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 36 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 37 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;36;1mScore Load (0.2ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 38 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 39 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 40 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 41 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;36;1mScore Load (0.1ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores"."player_id" = 42 AND "scores"."round_id" = 5) LIMIT 1[0m
+  [4;35;1mSeating Update (0.4ms)[0m   [0mUPDATE "seatings" SET "html" = '--- 
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Kate Evans
+ created_at: 2010-06-06 17:57:33
+ updated_at: 2010-06-06 17:57:37
+ id: "30"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Brent Lippert
+ created_at: 2010-06-06 17:57:58
+ updated_at: 2010-06-06 17:57:58
+ id: "32"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Jonathan Lin
+ created_at: 2010-06-06 18:39:45
+ updated_at: 2010-06-06 18:39:45
+ id: "41"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Tyler Stern
+ created_at: 2010-06-06 17:55:23
+ updated_at: 2010-06-06 17:55:23
+ id: "28"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Stephen Schwartz
+ created_at: 2010-06-06 17:54:56
+ updated_at: 2010-06-06 17:54:56
+ id: "27"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Ben Bartolome
+ created_at: 2010-06-06 18:38:32
+ updated_at: 2010-06-06 18:38:32
+ id: "35"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Hunter Leath
+ created_at: 2010-06-06 17:54:18
+ updated_at: 2010-06-06 17:54:18
+ id: "23"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Brett Jordan
+ created_at: 2010-06-06 17:54:28
+ updated_at: 2010-06-06 17:54:28
+ id: "24"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Sahil Patel
+ created_at: 2010-06-06 18:39:19
+ updated_at: 2010-06-06 18:39:19
+ id: "38"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Sam Jung
+ created_at: 2010-06-06 18:38:49
+ updated_at: 2010-06-06 18:38:49
+ id: "37"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Shoham Das
+ created_at: 2010-06-06 18:39:36
+ updated_at: 2010-06-06 18:39:36
+ id: "40"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Jea Du Kim
+ created_at: 2010-06-06 17:57:45
+ updated_at: 2010-06-06 17:57:45
+ id: "31"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Nowrin Chowdhury
+ created_at: 2010-06-06 18:39:52
+ updated_at: 2010-06-06 18:39:52
+ id: "42"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Ridwan Syed
+ created_at: 2010-06-06 18:38:18
+ updated_at: 2010-06-06 18:38:18
+ id: "33"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: John Campos
+ created_at: 2010-06-06 18:38:25
+ updated_at: 2010-06-06 18:38:25
+ id: "34"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Julie Chow
+ created_at: 2010-06-06 17:54:42
+ updated_at: 2010-06-06 17:54:42
+ id: "25"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Senthil Natarajan
+ created_at: 2010-06-06 18:39:28
+ updated_at: 2010-06-06 18:39:28
+ id: "39"
+ division_id: "1"
+ location_id: "1"
+ team_id: "9"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Dustin Wright
+ created_at: 2010-06-06 18:38:40
+ updated_at: 2010-06-06 18:38:40
+ id: "36"
+ division_id: "3"
+ location_id: "2"
+ team_id: "8"
+- - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Lucy Yang
+ created_at: 2010-06-06 17:55:28
+ updated_at: 2010-06-06 17:55:28
+ id: "29"
+ division_id: "1"
+ location_id: "1"
+ team_id: "7"
+ - !ActiveRecord,2007/Player 
+ attributes: 
+ name: Michael Liu
+ created_at: 2010-06-06 17:54:49
+ updated_at: 2010-06-06 17:54:49
+ id: "26"
+ division_id: "1"
+ location_id: "1"
+ team_id: "6"
+' WHERE "id" = 21[0m
+Rendering template within layouts/games
+Rendering games/table
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+Completed in 111ms (View: 8, DB: 7) | 200 OK [http://localhost/games/13/seat?division=1&regenerate=true&round=6]
+
+
+Processing TournamentsController#index (for 127.0.0.1 at 2010-06-10 19:20:03) [GET]
+  [4;36;1mTournament Load (10.1ms)[0m   [0;1mSELECT * FROM "tournaments" [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 426ms (View: 339, DB: 10) | 200 OK [http://localhost/]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-10 19:20:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTournament Load (0.3ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;36;1mGame Load (9.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 67ms (View: 24, DB: 10) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2010-06-10 19:20:12) [POST]
+  Parameters: {"game"=>{"name"=>"Equations", "scoringModel"=>"Cube", "tournament_id"=>"1"}, "commit"=>"Create Game", "authenticity_token"=>"LAVLCAFtMrbKrzEzMsMMXEGaaJ5nM6Hu3Xb323QAoGQ="}
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (25.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:20:59) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (25.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:21:00) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (70.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:21:00) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (24.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:21:01) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (73.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:21:01) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (24.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:21:02) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (70.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:21:33) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:319: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (24.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:21:38) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:318: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (72.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:22:11) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (24.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:22:13) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (71.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:22:14) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (24.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:22:15) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (72.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:22:27) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:261: syntax error, unexpected kELSE, expecting kEND
+/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:319: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (24.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:23:04) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (70.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:23:09) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (23.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:23:18) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (69.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 19:23:28) [GET]
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:320: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (25.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#index (for 127.0.0.1 at 2010-06-10 19:23:34) [GET]
+  [4;35;1mGame Load (0.7ms)[0m   [0mSELECT * FROM "games" [0m
+Rendering template within layouts/games
+Rendering games/index
+Completed in 39ms (View: 34, DB: 1) | 200 OK [http://localhost/games]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-10 19:23:38) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mDivision Load (0.7ms)[0m   [0;1mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (16.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mScore Load (2.2ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 5) [0m
+  [4;36;1mPlayer Load (0.7ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 23) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 25) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 26) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 27) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 28) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 29) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 30) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 31) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 32) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 38) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 39) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 40) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 41) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 42) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 33) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 34) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 35) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 36) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 37) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+
+NameError (undefined local variable or method `endf' for #<GamesController:0x104c3a078>):
+  app/controllers/games_controller.rb:37:in `show'
+  app/controllers/games_controller.rb:25:in `show'
+
+Rendered rescues/_trace (72.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-10 19:23:52) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mDivision Load (0.5ms)[0m   [0;1mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 13) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 13) [0m
+  [4;35;1mScore Load (1.0ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 5) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 23) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mDivision Load (0.1ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 25) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 26) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 27) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 28) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 29) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 30) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 31) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 32) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 38) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 39) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.1ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 40) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.1ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 41) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 42) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 33) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 34) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 35) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 36) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 37) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mScore Load (0.9ms)[0m   [0;1mSELECT * FROM "scores" WHERE ("scores".round_id = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 25) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 26) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 27) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 28) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 29) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 30) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 31) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 32) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 33) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 34) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 35) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 36) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 37) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 39) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 40) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 41) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 42) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."tournament_id" = 1 AND "teams"."division_id" = 1) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;35;1mDivision Load (0.5ms)[0m   [0mSELECT * FROM "divisions" [0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mLocation Load (0.1ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 172ms (View: 49, DB: 10) | 200 OK [http://localhost/games/13]
+
+
+Processing GamesController#create (for 127.0.0.1 at 2010-06-10 19:23:59) [POST]
+  Parameters: {"game"=>{"name"=>"Equations", "scoringModel"=>"Cube", "tournament_id"=>"1"}, "commit"=>"Create Game", "authenticity_token"=>"LAVLCAFtMrbKrzEzMsMMXEGaaJ5nM6Hu3Xb323QAoGQ="}
+  [4;35;1mGame Create (0.3ms)[0m   [0mINSERT INTO "games" ("name", "created_at", "category", "updated_at", "bitwise_number", "scoringModel", "tournament_id") VALUES('Equations', '2010-06-10 23:23:59', NULL, '2010-06-10 23:23:59', NULL, 'Cube', 1)[0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+  [4;36;1mGame Update (0.2ms)[0m   [0;1mUPDATE "games" SET "updated_at" = '2010-06-10 23:23:59', "bitwise_number" = 2 WHERE "id" = 14[0m
+Redirected to http://localhost:3000/games/14
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/games]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-10 19:23:59) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDivision Load (0.6ms)[0m   [0mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds".game_id = 14) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Completed in 75ms (View: 61, DB: 1) | 200 OK [http://localhost/games/14]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-10 19:24:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 19ms (View: 9, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2010-06-10 19:24:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/teams
+Rendering teams/index
+  [4;35;1mTeam Load (0.5ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".tournament_id = 1) [0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Completed in 54ms (View: 45, DB: 1) | 200 OK [http://localhost/teams?id=1]
+
+
+Processing TeamsController#edit (for 127.0.0.1 at 2010-06-10 19:24:07) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+Rendering template within layouts/teams
+Rendering teams/edit
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" [0m
+  [4;35;1mDivision Load (0.3ms)[0m   [0mSELECT * FROM "divisions" [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mGame Load (0.4ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 52ms (View: 45, DB: 1) | 200 OK [http://localhost/teams/6/edit]
+
+
+Processing TeamsController#update (for 127.0.0.1 at 2010-06-10 19:24:10) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"LAVLCAFtMrbKrzEzMsMMXEGaaJ5nM6Hu3Xb323QAoGQ=", "id"=>"6", "team"=>{"name"=>"Gotta Catch 'Em All", "bit_wise"=>["1", "2"], "division_id"=>"1", "location_id"=>"1"}}
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;36;1mTeam Update (0.2ms)[0m   [0;1mUPDATE "teams" SET "updated_at" = '2010-06-10 23:24:10', "bitwise_games_played" = 3 WHERE "id" = 6[0m
+Redirected to http://localhost:3000/teams/6
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/teams/6]
+
+
+Processing TeamsController#show (for 127.0.0.1 at 2010-06-10 19:24:10) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 6) [0m
+Rendering template within layouts/teams
+Rendering teams/show
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+Completed in 55ms (View: 44, DB: 1) | 200 OK [http://localhost/teams/6]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-10 19:24:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 61ms (View: 9, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2010-06-10 19:24:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/teams
+Rendering teams/index
+  [4;36;1mTeam Load (0.5ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".tournament_id = 1) [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Completed in 33ms (View: 22, DB: 1) | 200 OK [http://localhost/teams?id=1]
+
+
+Processing TeamsController#edit (for 127.0.0.1 at 2010-06-10 19:24:16) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+Rendering template within layouts/teams
+Rendering teams/edit
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" [0m
+  [4;36;1mDivision Load (0.4ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 73ms (View: 66, DB: 1) | 200 OK [http://localhost/teams/7/edit]
+
+
+Processing TeamsController#update (for 127.0.0.1 at 2010-06-10 19:24:18) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"LAVLCAFtMrbKrzEzMsMMXEGaaJ5nM6Hu3Xb323QAoGQ=", "id"=>"7", "team"=>{"name"=>"Prop my Ganda", "bit_wise"=>["1", "2"], "division_id"=>"1", "location_id"=>"1"}}
+  [4;35;1mTeam Load (0.5ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+  [4;35;1mTeam Update (0.2ms)[0m   [0mUPDATE "teams" SET "updated_at" = '2010-06-10 23:24:18', "bitwise_games_played" = 3 WHERE "id" = 7[0m
+Redirected to http://localhost:3000/teams/7
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/teams/7]
+
+
+Processing TeamsController#show (for 127.0.0.1 at 2010-06-10 19:24:18) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 7) [0m
+Rendering template within layouts/teams
+Rendering teams/show
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 7) [0m
+Completed in 87ms (View: 76, DB: 1) | 200 OK [http://localhost/teams/7]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-10 19:24:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 19ms (View: 9, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2010-06-10 19:24:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/teams
+Rendering teams/index
+  [4;35;1mTeam Load (0.4ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".tournament_id = 1) [0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Completed in 76ms (View: 66, DB: 1) | 200 OK [http://localhost/teams?id=1]
+
+
+Processing TeamsController#edit (for 127.0.0.1 at 2010-06-10 19:24:23) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+Rendering template within layouts/teams
+Rendering teams/edit
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM "locations" [0m
+  [4;35;1mDivision Load (0.3ms)[0m   [0mSELECT * FROM "divisions" [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 29ms (View: 22, DB: 1) | 200 OK [http://localhost/teams/8/edit]
+
+
+Processing TeamsController#update (for 127.0.0.1 at 2010-06-10 19:24:25) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"LAVLCAFtMrbKrzEzMsMMXEGaaJ5nM6Hu3Xb323QAoGQ=", "id"=>"8", "team"=>{"name"=>"We Live With Your Mom", "bit_wise"=>["1", "2"], "division_id"=>"1", "location_id"=>"2"}}
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+  [4;35;1mPlayer Load (0.5ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+  [4;36;1mTeam Update (0.2ms)[0m   [0;1mUPDATE "teams" SET "updated_at" = '2010-06-10 23:24:25', "bitwise_games_played" = 3 WHERE "id" = 8[0m
+Redirected to http://localhost:3000/teams/8
+Completed in 64ms (DB: 1) | 302 Found [http://localhost/teams/8]
+
+
+Processing TeamsController#show (for 127.0.0.1 at 2010-06-10 19:24:25) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 8) [0m
+Rendering template within layouts/teams
+Rendering teams/show
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 8) [0m
+Completed in 41ms (View: 31, DB: 1) | 200 OK [http://localhost/teams/8]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-10 19:24:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 64ms (View: 9, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2010-06-10 19:24:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTournament Load (0.3ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/teams
+Rendering teams/index
+  [4;36;1mTeam Load (0.4ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".tournament_id = 1) [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mDivision Load (0.1ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Completed in 31ms (View: 21, DB: 1) | 200 OK [http://localhost/teams?id=1]
+
+
+Processing TeamsController#edit (for 127.0.0.1 at 2010-06-10 19:24:30) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+Rendering template within layouts/teams
+Rendering teams/edit
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" [0m
+  [4;36;1mDivision Load (0.4ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 73ms (View: 67, DB: 1) | 200 OK [http://localhost/teams/9/edit]
+
+
+Processing TeamsController#update (for 127.0.0.1 at 2010-06-10 19:24:32) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"LAVLCAFtMrbKrzEzMsMMXEGaaJ5nM6Hu3Xb323QAoGQ=", "id"=>"9", "team"=>{"name"=>"C-C-C-C-Combo Breaker", "bit_wise"=>["1", "2"], "division_id"=>"1", "location_id"=>"2"}}
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+  [4;35;1mTeam Update (0.2ms)[0m   [0mUPDATE "teams" SET "updated_at" = '2010-06-10 23:24:32', "bitwise_games_played" = 3 WHERE "id" = 9[0m
+Redirected to http://localhost:3000/teams/9
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/teams/9]
+
+
+Processing TeamsController#show (for 127.0.0.1 at 2010-06-10 19:24:32) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 9) [0m
+Rendering template within layouts/teams
+Rendering teams/show
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+  [4;36;1mGame Load (0.3ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 9) [0m
+Completed in 86ms (View: 75, DB: 1) | 200 OK [http://localhost/teams/9]
+
+
+Processing TournamentsController#show (for 127.0.0.1 at 2010-06-10 19:24:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/show
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games".tournament_id = 1) [0m
+Completed in 21ms (View: 9, DB: 0) | 200 OK [http://localhost/tournaments/1]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-10 19:24:35) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDivision Load (0.5ms)[0m   [0;1mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 14) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" [0m
+  [4;36;1mTournament Load (0.2ms)[0m   [0;1mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Completed in 66ms (View: 55, DB: 1) | 200 OK [http://localhost/games/14]
+
+
+Processing GamesController#new_round (for 127.0.0.1 at 2010-06-10 19:24:39) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mRound Create (0.3ms)[0m   [0mINSERT INTO "rounds" ("created_at", "updated_at", "game_id") VALUES('2010-06-10 23:24:39', '2010-06-10 23:24:39', 14)[0m
+Redirected to http://localhost:3000/games/14
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/games/14/new_round]
+
+
+Processing GamesController#show (for 127.0.0.1 at 2010-06-10 19:24:39) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDivision Load (0.5ms)[0m   [0;1mSELECT * FROM "divisions" LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 14) [0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores".round_id = 7) [0m
+Rendering template within layouts/games
+Rendering games/show
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" [0m
+  [4;35;1mTournament Load (0.2ms)[0m   [0mSELECT * FROM "tournaments" WHERE ("tournaments"."id" = 1) [0m
+Completed in 26ms (View: 12, DB: 1) | 200 OK [http://localhost/games/14]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:24:41) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1' AND "seatings"."round_id" = '7') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 97ms (View: 24, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:26:49) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1' AND "seatings"."round_id" = '7') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds".game_id = 14) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;36;1mPlayer Load (0.4ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+  [4;35;1mScore Load (0.1ms)[0m   [0mSELECT * FROM "scores" WHERE ("scores"."player_id" = 23 AND "scores"."round_id" = 7) LIMIT 1[0m
+
+NoMethodError (undefined method `score' for nil:NilClass):
+  app/controllers/games_controller.rb:316:in `seat'
+  app/controllers/games_controller.rb:315:in `each'
+  app/controllers/games_controller.rb:315:in `seat'
+  app/controllers/games_controller.rb:313:in `seat'
+  app/controllers/games_controller.rb:310:in `seat'
+
+Rendered rescues/_trace (77.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:27:22) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1' AND "seatings"."round_id" = '7') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT * FROM "players" WHERE ("players".team_id = 6) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/games_controller.rb:313:in `seat'
+  app/controllers/games_controller.rb:311:in `seat'
+  app/controllers/games_controller.rb:308:in `seat'
+
+Rendered rescues/_trace (79.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:28:09) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1' AND "seatings"."round_id" = '7') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTeam Load (0.6ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 25ms (View: 2, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing ApplicationController#seat (for 127.0.0.1 at 2010-06-10 19:37:07) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:323: syntax error, unexpected '(', expecting kEND
+      	     @subdivisions(subToSeat).each do |f|
+      	                   ^
+/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:328: syntax error, unexpected '(', expecting kTHEN or ':' or '\n' or ';'
+...ounter > 10) && @subdivisions(subToSeat).length <= teamsInEa...
+                              ^
+/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:346: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (74.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#seat (for 127.0.0.1 at 2010-06-10 19:37:22) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:323: syntax error, unexpected '(', expecting kEND
+      	     @subdivisions(subToSeat).each do |f|
+      	                   ^
+/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:328: syntax error, unexpected '(', expecting kTHEN or ':' or '\n' or ';'
+...ounter > 10) && @subdivisions(subToSeat).length =< teamsInEa...
+                              ^
+/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:346: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (23.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#seat (for 127.0.0.1 at 2010-06-10 19:37:23) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:323: syntax error, unexpected '(', expecting kEND
+      	     @subdivisions(subToSeat).each do |f|
+      	                   ^
+/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:328: syntax error, unexpected '(', expecting kTHEN or ':' or '\n' or ';'
+...ounter > 10) && @subdivisions(subToSeat).length =< teamsInEa...
+                              ^
+/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:346: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (70.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#seat (for 127.0.0.1 at 2010-06-10 19:37:40) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:323: syntax error, unexpected '(', expecting kEND
+      	     @subdivisions(subToSeat).each do |f|
+      	                   ^
+/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:328: syntax error, unexpected '(', expecting kTHEN or ':' or '\n' or ';'
+...ounter > 10) && @subdivisions(subToSeat).length =< teamsInEa...
+                              ^
+/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:346: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (23.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#seat (for 127.0.0.1 at 2010-06-10 19:37:54) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:328: syntax error, unexpected '<'
+...divisions[subToSeat].length =< teamsInEachDivision
+                              ^
+/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:346: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (73.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:38:03) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1' AND "seatings"."round_id" = '7') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+
+NoMethodError (undefined method `to_f' for #<Array:0x104a6f978>):
+  app/controllers/games_controller.rb:313:in `seat'
+
+Rendered rescues/_trace (69.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:38:21) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1' AND "seatings"."round_id" = '7') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/games_controller.rb:323:in `seat'
+  app/controllers/games_controller.rb:317:in `each'
+  app/controllers/games_controller.rb:317:in `seat'
+
+Rendered rescues/_trace (25.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:38:59) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1' AND "seatings"."round_id" = '7') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;36;1mDivision Load (0.1ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mTeam Load (0.4ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length):
+  app/controllers/games_controller.rb:330:in `seat'
+  app/controllers/games_controller.rb:317:in `each'
+  app/controllers/games_controller.rb:317:in `seat'
+
+Rendered rescues/_trace (25.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:39:56) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1' AND "seatings"."round_id" = '7') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTeam Load (0.4ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.<<):
+  app/controllers/games_controller.rb:335:in `seat'
+  app/controllers/games_controller.rb:317:in `each'
+  app/controllers/games_controller.rb:317:in `seat'
+
+Rendered rescues/_trace (26.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:40:27) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1' AND "seatings"."round_id" = '7') LIMIT 1[0m
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mTeam Load (0.4ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 67ms (View: 3, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:40:42) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1' AND "seatings"."round_id" = '7') LIMIT 1[0m
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 22ms (View: 2, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:45:30) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.3ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mTeam Load (0.4ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 67ms (View: 3, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing ApplicationController#seat (for 127.0.0.1 at 2010-06-10 19:46:30) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:348: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (23.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 19:46:40) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;35;1mTeam Load (0.4ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+Completed in 69ms (View: 3, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing ApplicationController#seat (for 127.0.0.1 at 2010-06-10 19:47:38) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:348: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (23.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TournamentsController#index (for 127.0.0.1 at 2010-06-10 21:27:00) [GET]
+  [4;36;1mTournament Load (0.5ms)[0m   [0;1mSELECT * FROM "tournaments" [0m
+Rendering template within layouts/tournaments
+Rendering tournaments/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#seat (for 127.0.0.1 at 2010-06-10 21:29:39) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:348: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (25.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#seat (for 127.0.0.1 at 2010-06-10 21:29:39) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+
+SyntaxError (/Users/hunter/Documents/Developer/AGLOA/app/controllers/games_controller.rb:348: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (24.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 21:31:04) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mSeating Load (0.1ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+Rendering template within layouts/games
+Rendering games/seat
+  [4;36;1mLocation Load (0.2ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mLocation Load (0.1ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 30ms (View: 10, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 21:33:14) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;36;1mGame Load (0.2ms)[0m   [0;1mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;35;1mRound Load (0.1ms)[0m   [0mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;36;1mDivision Load (0.2ms)[0m   [0;1mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;35;1mSeating Load (0.1ms)[0m   [0mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+  [4;36;1mTeam Load (0.5ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams".division_id = 1) [0m
+  [4;35;1mSeating Create (0.3ms)[0m   [0mINSERT INTO "seatings" ("html", "round_id", "created_at", "updated_at", "division_id", "game_id") VALUES('--- 
+- - !ActiveRecord,2007/Team 
+ attributes: 
+ bitwise_games_played: "3"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-10 23:24:10
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+', NULL, '2010-06-11 01:33:14', '2010-06-11 01:33:14', 1, 14)[0m
+  [4;36;1mSeating Update (0.2ms)[0m   [0;1mUPDATE "seatings" SET "html" = '--- 
+- - !ActiveRecord,2007/Team 
+ attributes: 
+ bitwise_games_played: "3"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-10 23:24:10
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ - !ActiveRecord,2007/Team 
+ attributes: 
+ bitwise_games_played: "3"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-10 23:24:18
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+' WHERE "id" = 22[0m
+  [4;35;1mSeating Update (0.3ms)[0m   [0mUPDATE "seatings" SET "html" = '--- 
+- - !ActiveRecord,2007/Team 
+ attributes: 
+ bitwise_games_played: "3"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-10 23:24:10
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ - !ActiveRecord,2007/Team 
+ attributes: 
+ bitwise_games_played: "3"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-10 23:24:18
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ - !ActiveRecord,2007/Team 
+ attributes: 
+ bitwise_games_played: "3"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-10 23:24:25
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+' WHERE "id" = 22[0m
+  [4;36;1mSeating Update (27.2ms)[0m   [0;1mUPDATE "seatings" SET "html" = '--- 
+- - !ActiveRecord,2007/Team 
+ attributes: 
+ bitwise_games_played: "3"
+ name: Gotta Catch ''Em All
+ created_at: 2010-06-06 16:51:38
+ updated_at: 2010-06-10 23:24:10
+ id: "6"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ - !ActiveRecord,2007/Team 
+ attributes: 
+ bitwise_games_played: "3"
+ name: Prop my Ganda
+ created_at: 2010-06-06 17:55:19
+ updated_at: 2010-06-10 23:24:18
+ id: "7"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "1"
+ - !ActiveRecord,2007/Team 
+ attributes: 
+ bitwise_games_played: "3"
+ name: We Live With Your Mom
+ created_at: 2010-06-06 18:38:15
+ updated_at: 2010-06-10 23:24:25
+ id: "8"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+ - !ActiveRecord,2007/Team 
+ attributes: 
+ bitwise_games_played: "3"
+ name: C-C-C-C-Combo Breaker
+ created_at: 2010-06-06 18:39:10
+ updated_at: 2010-06-10 23:24:32
+ id: "9"
+ tournament_id: "1"
+ division_id: "1"
+ location_id: "2"
+' WHERE "id" = 22[0m
+Rendering template within layouts/games
+Rendering games/seat
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 119ms (View: 8, DB: 29) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 21:33:14) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each_with_index) on line #3 of app/views/games/seat.html.erb:
+1: <h1> Seating for <%= @division.name %> <%= @game.name %> </h1>
+2: <% alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] %>
+3: <% @subdivisions.each_with_index do |sub, index| %>
+4:   <h4> Subdivision <%= alphabet[index] %> </h4>
+5:   <table>
+6:   	<tr>
+
+    app/views/games/seat.html.erb:3
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 21:33:15) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each_with_index) on line #3 of app/views/games/seat.html.erb:
+1: <h1> Seating for <%= @division.name %> <%= @game.name %> </h1>
+2: <% alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] %>
+3: <% @subdivisions.each_with_index do |sub, index| %>
+4:   <h4> Subdivision <%= alphabet[index] %> </h4>
+5:   <table>
+6:   	<tr>
+
+    app/views/games/seat.html.erb:3
+
+Rendered rescues/_trace (31.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 21:33:22) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each_with_index) on line #3 of app/views/games/seat.html.erb:
+1: <h1> Seating for <%= @division.name %> <%= @game.name %> </h1>
+2: <% alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] %>
+3: <% @subdivisions.each_with_index do |sub, index| %>
+4:   <h4> Subdivision <%= alphabet[index] %> </h4>
+5:   <table>
+6:   	<tr>
+
+    app/views/games/seat.html.erb:3
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 21:34:18) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 28ms (View: 9, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 21:43:06) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mSeating Load (0.3ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 29ms (View: 9, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 21:43:07) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.3ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.2ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.1ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mSeating Load (0.3ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 71ms (View: 9, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 21:44:00) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 31ms (View: 12, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]
+
+
+Processing GamesController#seat (for 127.0.0.1 at 2010-06-10 21:44:02) [GET]
+  Parameters: {"division"=>"1", "id"=>"14", "round"=>"7"}
+  [4;35;1mGame Load (0.2ms)[0m   [0mSELECT * FROM "games" WHERE ("games"."id" = 14) [0m
+  [4;36;1mRound Load (0.1ms)[0m   [0;1mSELECT * FROM "rounds" WHERE ("rounds"."id" = 7) [0m
+  [4;35;1mDivision Load (0.2ms)[0m   [0mSELECT * FROM "divisions" WHERE ("divisions"."id" = 1) [0m
+  [4;36;1mSeating Load (0.2ms)[0m   [0;1mSELECT * FROM "seatings" WHERE ("seatings"."game_id" = '14' AND "seatings"."division_id" = '1') LIMIT 1[0m
+Rendering template within layouts/games
+Rendering games/seat
+  [4;35;1mLocation Load (0.2ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mLocation Load (0.1ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 2) [0m
+Completed in 28ms (View: 9, DB: 1) | 200 OK [http://localhost/games/14/seat?division=1&round=7]

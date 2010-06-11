@@ -1,1 +1,18 @@
+<h1> Seating for <%= @division.name %> <%= @game.name %> </h1>
+<% alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] %>
+<% @subdivisions.each_with_index do |sub, index| %>
+  <h4> Subdivision <%= alphabet[index] %> </h4>
+  <table>
+  	<tr>
+  		<th>Team</th>
+  		<th>Geo Location</th>
+  	</tr>
+  <% sub.each do |p| %>
+  <tr>
+    <td><%= p.name %></td>
+    <td><%= p.location.geo %></td>
+  </tr>
+  <% end %>
+  </table>
+<% end %>
 <%= link_to 'Regenerate', {:regenerate => true, :division => @division.id, :round => @round.id} %>
